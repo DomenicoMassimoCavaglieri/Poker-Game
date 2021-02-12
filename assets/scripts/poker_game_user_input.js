@@ -1,58 +1,25 @@
-//Create the deck of cards
-function createDeck() {
-    let deck = [];
-    for (let i = 1; i < 14; i++) {
-        let clubs = "♣";
-        let diamonds = "♦"
-        let hearts = "♥";
-        let spades = "♠"
-        if (i == 11) {
-            deck.push(["J", clubs], ["J", diamonds], ["J", hearts], ["J", spades]);
-        } else if (i == 12) {
-            deck.push(["Q", clubs], ["Q", diamonds], ["Q", hearts], ["Q", spades]);
-        } else if (i == 13) {
-            deck.push(["K", clubs], ["K", diamonds], ["K", hearts], ["K", spades]);
-        } else
-            deck.push([i, clubs], [i, diamonds], [i, hearts], [i, spades]);
-    }
-    return deck;
-}
+//Create the variable containing the user's hand of cards
+var userCardHand = createUserCardHand();
+userCardHand.forEach(card => console.log("Card: " + card));
 
-//Shuffle the deck of cards
-var deck = createDeck();
-fisherYates(deck);
-function fisherYates(cards) {
-    var i, j, k;
-    for (i =cards.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * i)
-        k =cards[i]
-       cards[i] =cards[j]
-       cards[j] = k
-    }
-}
-
-//Create the variable containing card hand
-var cardHand = deck.slice(0, 5);
-cardHand.forEach(card => console.log("Card: " + card));
-
-//Turns "J" into 11, "Q" into 12, "K" into 13
-figuresIntoIntegers(cardHand);
+//turns card values into integers
+cardValueIntoIntegers(userCardHand);
 
 //Sort the hand of cards
-cardHand.sort((a, b) => a[0] - b[0]);
+userCardHand.sort((a, b) => a[0] - b[0]);
 
 
 //Hand of cards is managed through two functions:
 
 //Hand of all different cards
-handWithDifferentCards(cardHand);
+handWithDifferentCards(userCardHand);
 
 //Hand with at least two of the same cards
-handWithEqualCards(cardHand);
+handWithEqualCards(userCardHand);
 
 
 function handWithDifferentCards(cards) {
-   //Create the conditions to be evaluated for hand of all different cards
+    //Create the conditions to be evaluated for hand of all different cards
     var straigth = cards[0][0] + 4 == cards[1][0] + 3 &&
         cards[1][0] + 3 == cards[2][0] + 2 &&
         cards[2][0] + 2 == cards[3][0] + 1 &&
@@ -88,8 +55,8 @@ function handWithDifferentCards(cards) {
 
 
 
-function handWithEqualCards (cards) {
-    //create a variable that contains the same cards
+function handWithEqualCards(cards) {
+    //Create the variable containing the double cards
     var doubleCardsHands = [];
 
     for (var i = 0; i < cards.length; i++) {
@@ -99,7 +66,7 @@ function handWithEqualCards (cards) {
             }
         }
     }
-    
+
     //Analyze the conditions and print the result
     switch (doubleCardsHands.length) {
         case 1:
@@ -118,13 +85,54 @@ function handWithEqualCards (cards) {
             console.log(">>Four of a Kind<<");
             break;
     }
-    
+
 }
 
-//Transform "J" into 11, "Q" into 12, "K" into 13
-function figuresIntoIntegers(cards) {
+//Create the function containing the user's hand of cards
+function createUserCardHand() {
+    let userDeck = [];
+    userDeck.push([document.getElementById("card_1").value, document.getElementById("card_suit_1").value])
+    userDeck.push([document.getElementById("card_2").value, document.getElementById("card_suit_2").value])
+    userDeck.push([document.getElementById("card_3").value, document.getElementById("card_suit_3").value])
+    userDeck.push([document.getElementById("card_4").value, document.getElementById("card_suit_4").value])
+    userDeck.push([document.getElementById("card_5").value, document.getElementById("card_suit_5").value])    
+    console.log(userDeck);
+    return userDeck;
+}
+
+//turns card values into integers
+function cardValueIntoIntegers(cards) {
     for (var i = 0; i < cards.length; i++) {
 
+        if (cards[i][0] == "1") {
+            cards[i][0] = 1
+        }
+        if (cards[i][0] == "2") {
+            cards[i][0] = 2
+        }
+        if (cards[i][0] == "3") {
+            cards[i][0] = 3
+        }
+        if (cards[i][0] == "4") {
+            cards[i][0] = 4
+        }
+        if (cards[i][0] == "5") {
+            cards[i][0] = 5
+        }
+        if (cards[i][0] == "6") {
+            cards[i][0] = 6
+        } if (cards[i][0] == "7") {
+            cards[i][0] = 7
+        }
+        if (cards[i][0] == "8") {
+            cards[i][0] = 8
+        }
+        if (cards[i][0] == "9") {
+            cards[i][0] = 9
+        }
+        if (cards[i][0] == "10") {
+            cards[i][0] = 10
+        }
         if (cards[i][0] == "J") {
             cards[i][0] = 11
         }
@@ -134,9 +142,8 @@ function figuresIntoIntegers(cards) {
         if (cards[i][0] == "K") {
             cards[i][0] = 13
         }
+        if (cards[i][0] == "K") {
+            cards[i][0] = 13
+        }
     }
 }
-
-
-//Manual test
-//var cardHand = [[1, "♣"], [2, "♣"], [3, "♣"], [4, "♣"], [5, "♣"]]
