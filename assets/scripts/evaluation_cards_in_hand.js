@@ -66,6 +66,9 @@ function handWithDifferentCards(cards) {
         case 6:
             console.log(">>Four of a Kind<<");
             break;
+        case 10:
+            console.log(">>You have selected 5 cards with the same value...<<");
+            break;
     }
     
 }

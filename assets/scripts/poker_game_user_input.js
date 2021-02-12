@@ -26,7 +26,6 @@ function createUserCardHand() {
     userDeck.push([document.getElementById("card_3").value, document.getElementById("card_suit_3").value])
     userDeck.push([document.getElementById("card_4").value, document.getElementById("card_suit_4").value])
     userDeck.push([document.getElementById("card_5").value, document.getElementById("card_suit_5").value])    
-    console.log(userDeck);
     return userDeck;
 }
 
