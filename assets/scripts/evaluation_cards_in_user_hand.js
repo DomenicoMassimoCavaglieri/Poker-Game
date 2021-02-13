@@ -1,41 +1,4 @@
 ////This function analyzes the user's card combination and prints the result
-function findFiveIdenticalCards(cards) {
-    if (cards[0][0] == cards[1][0] &&
-        cards[1][0] == cards[2][0] &&
-        cards[2][0] == cards[3][0] &&
-        cards[3][0] == cards[4][0]) {
-        return true;
-    } else return false;
-}
-        
-
-function findstraigth(cards) {
-    if (cards[0][0] + 4 == cards[1][0] + 3 &&
-        cards[1][0] + 3 == cards[2][0] + 2 &&
-        cards[2][0] + 2 == cards[3][0] + 1 &&
-        cards[3][0] + 1 == cards[4][0]) {
-        return true;
-        } else return false;
-}
-
-function findAceStraigth(cards) {
-    if (cards[0][0] == 1 && cards[1][0] == 10 &&
-        cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13) {
-        console.log(true);    
-        return true;
-        } else return false;
-}
-
-function findFlush(cards) {
-    if (cards[0][1] === cards[1][1] &&
-        cards[2][1] === cards[3][1] &&
-        cards[3][1] === cards[4][1]) {
-        console.log(true);
-        return true;
-        } else return false;
-}
-
-
 function printScore(cards) {
     if (findFiveIdenticalCards(cards)) {
         document.getElementById("score_text").innerHTML = "5 dentical cards...";
@@ -65,9 +28,47 @@ function printScore(cards) {
 } 
 
 
-    
+//These functions check the possible combinations of cards
+
+function findFiveIdenticalCards(cards) {
+    if (cards[0][0] == cards[1][0] &&
+        cards[1][0] == cards[2][0] &&
+        cards[2][0] == cards[3][0] &&
+        cards[3][0] == cards[4][0]) {
+        return true;
+    } else return false;
+}
+        
+function findstraigth(cards) {
+    if (cards[0][0] + 4 == cards[1][0] + 3 &&
+        cards[1][0] + 3 == cards[2][0] + 2 &&
+        cards[2][0] + 2 == cards[3][0] + 1 &&
+        cards[3][0] + 1 == cards[4][0]) {
+        return true;
+        } else return false;
+}
+
+function findAceStraigth(cards) {
+    if (cards[0][0] == 1 && cards[1][0] == 10 &&
+        cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13) {
+        console.log(true);    
+        return true;
+        } else return false;
+}
+
+function findFlush(cards) {
+    if (cards[0][1] === cards[1][1] &&
+        cards[2][1] === cards[3][1] &&
+        cards[3][1] === cards[4][1]) {
+        console.log(true);
+        return true;
+        } else return false;
+}
+
+
+//create a variable that contains the identical cards
 function CheckHEqualCards(cards) {
-    //create a variable that contains the same cards
+    
     var doubleCardsHands = [];
 
     for (var i = 0; i < cards.length; i++) {

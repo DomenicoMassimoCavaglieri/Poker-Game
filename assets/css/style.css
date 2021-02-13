@@ -21,7 +21,6 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #edeea2;
-    border-radius: 10px;
     margin: 0;
     border: solid 1px  #ff0000;
 }
@@ -36,7 +35,7 @@ body {
 
 .title {
     width: 320px;
-    height: 40px;
+    height: 50px;
 }
 
 select {
@@ -48,7 +47,7 @@ select {
     justify-content: space-between;
     width: 320px;
     height: auto;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .card {
@@ -68,27 +67,33 @@ select {
 
 #score-container {
     height: 60px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .score-text-container {
-    width: 230px;
+    justify-content: center;
+    width: 320px;
     text-align: center
 }
 
 #score_text {
-    color: #ff0000;
-    font-size: 28px;
+    color: #ffffff;
+    font-size: 40px;
     font-weight: 500;
     margin: 0;
 }
 
+.btn {
+    margin-top: 50px;
+}
+
 button {
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: solid 1px  #ff0000;
     cursor: pointer;
+    font-size: 30PX;
 }
 /* 
 .conteiner_text_cards {
