@@ -9,7 +9,8 @@
 <body>
     <h1 class="red">Open the console to see your Poker Game Score</h1>
     <h2>Choose a personal card combination and refresh the page</h2>
-    <div class="cards flex">
+    <div class="cards-table flex">
+        <div class="cards flex">
             <div class="card">
                 <select name="card_1" id="card_1" class="card_number" multiple>
                     <option value="1"selected>1</option>
@@ -125,32 +126,34 @@
                     <option value="♠">♠</option>
                 </select>
             </div>
+        </div>
+            
             <button type="button" onclick="getInput()">OK</button>
+            <div class="conteiner_text_cards flex">
+                <div class="flex conteiner_text_card"  >
+                    <p id="card_text_1">Card</p>
+                    <p id="card_text_suit_1">1</p>
+                </div>
+                <div class="flex conteiner_text_card"> 
+                    <p id="card_text_2">Card</p>
+                    <p id="card_text_suit_2">2</p>
+                </div>
+                <div class="flex conteiner_text_card"> 
+                    <p id="card_text_3">Card</p>
+                    <p id="card_text_suit_3">3</p>
+                </div>
+                <div class="flex conteiner_text_card"> 
+                    <p id="card_text_4">Card</p>
+                    <p id="card_text_suit_4">4</p>
+                </div>
+                <div class="flex conteiner_text_card"> 
+                    <p id="card_text_5">Card</p>
+                    <p id="card_text_suit_5">4</p>
+                </div>
+            </div>
+            <button type="button" onclick="createUserCardHand()">SCORE</button>
+            
     </div>
-    <div class="conteiner_text_cards flex">
-        <div class="flex conteiner_text_card"  >
-            <p id="card_text_1">Card</p>
-            <p id="card_text_suit_1">1</p>
-        </div>
-        <div class="flex conteiner_text_card"> 
-            <p id="card_text_2">Card</p>
-            <p id="card_text_suit_2">2</p>
-        </div>
-        <div class="flex conteiner_text_card"> 
-            <p id="card_text_3">Card</p>
-            <p id="card_text_suit_3">3</p>
-        </div>
-        <div class="flex conteiner_text_card"> 
-            <p id="card_text_4">Card</p>
-            <p id="card_text_suit_4">4</p>
-        </div>
-        <div class="flex conteiner_text_card"> 
-            <p id="card_text_5">Card</p>
-            <p id="card_text_suit_5">4</p>
-        </div>
-    </div>
-    <button type="button" onclick="createUserCardHand()">SCORE</button>
-    
 
     <script src="./assets/scripts/evaluation_cards_in_hand.js"></script>
     <script src="./assets/scripts/poker_game_user_input.js"></script>
