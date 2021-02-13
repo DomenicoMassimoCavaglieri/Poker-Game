@@ -7,153 +7,161 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="red">Open the console to see your Poker Game Score</h1>
-    <h2>Choose a personal card combination and refresh the page</h2>
-    <div class="cards-table flex">
-        <div class="cards flex">
-            <div class="card">
-                <select name="card_1" id="card_1" class="card_number" multiple>
-                    <option value="1"selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="J">J</option>
-                    <option value="Q">Q</option>
-                    <option value="K">K</option>
-                </select> 
-                <select name="card_suit_1" id="card_suit_1" class="card_suite" multiple>
-                    <option value="♣"selected>♣</option>
-                    <option value="♦" class="red">♦</option>
-                    <option value="♥" class="red">♥</option>
-                    <option value="♠">♠</option>
-                </select>
+    <div id="main-section" class="flex">
+        <div class="title">
+            <h2 class="red label flex">Choose your cards</h2>
+        </div>
+            <div class="cards flex">
+                <div class="card">
+                    <select name="card_1" id="card_1" class="card_number">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="J">J</option>
+                        <option value="Q">Q</option>
+                        <option value="K">K</option>
+                    </select> 
+                    <select name="card_suit_1" id="card_suit_1" class="card_suite" >
+                        <option value="♣">♣</option>
+                        <option value="♦" class="red">♦</option>
+                        <option value="♥" class="red">♥</option>
+                        <option value="♠">♠</option>
+                    </select>
+                </div>
+                <div class="card">
+                    <select name="card_2" id="card_2" class="card_number" >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" >4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="J">J</option>
+                        <option value="Q">Q</option>
+                        <option value="K">K</option>
+                    </select>
+                    <select name="card_suit_2" id="card_suit_2" class="card_suite" >
+                        <option value="♣">♣</option>
+                        <option value="♦" class="red">♦</option>
+                        <option value="♥" class="red">♥</option>
+                        <option value="♠">♠</option>
+                    </select>
+                </div>
+                <div class="card">
+                    <select name="card_3" id="card_3" class="card_number" >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="J">J</option>
+                        <option value="Q">Q</option>
+                        <option value="K">K</option>
+                    </select>
+                    <select name="card_suit_3" id="card_suit_3" class="card_suite" >
+                        <option value="♣">♣</option>
+                        <option value="♦" class="red">♦</option>
+                        <option value="♥" class="red">♥</option>
+                        <option value="♠">♠</option>
+                    </select>
+                </div>
+                <div class="card">
+                    <select name="card_4" id="card_4" class="card_number" >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" >4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="J">J</option>
+                        <option value="Q">Q</option>
+                        <option value="K">K</option>
+                    </select>
+                    <select name="card_suit_4" id="card_suit_4" class="card_suite" >
+                        <option value="♣">♣</option>
+                        <option value="♦" class="red">♦</option>
+                        <option value="♥" class="red">♥</option>
+                        <option value="♠">♠</option>
+                    </select>
+                </div>
+                <div class="card">
+                    <select name="card_5" id="card_5" class="card_number" >
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="J">J</option>
+                        <option value="Q">Q</option>
+                        <option value="K">K</option>
+                    </select>
+                    <select name="card_suit_5" id="card_suit_5" class="card_suite" >
+                        <option value="♣">♣</option>
+                        <option value="♦" class="red">♦</option>
+                        <option value="♥" class="red">♥</option>
+                        <option value="♠">♠</option>
+                    </select>
+                </div>
             </div>
-            <div class="card">
-                <select name="card_2" id="card_2" class="card_number" multiple>
-                    <option value="1">1</option>
-                    <option value="2"selected>2</option>
-                    <option value="3">3</option>
-                    <option value="4" >4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="J">J</option>
-                    <option value="Q">Q</option>
-                    <option value="K">K</option>
-                </select>
-                <select name="card_suit_2" id="card_suit_2" class="card_suite" multiple>
-                    <option value="♣"selected>♣</option>
-                    <option value="♦" class="red">♦</option>
-                    <option value="♥" class="red">♥</option>
-                    <option value="♠">♠</option>
-                </select>
+                <!-- <button type="button" onclick="getInput()">OK</button>
+                <div class="container_text_cards flex">
+                    <div class="flex conteiner_text_card"  >
+                        <p id="card_text_1">1</p>
+                        <p id="card_text_suit_1">♣</p>
+                    </div>
+                    <div class="flex conteiner_text_card"> 
+                        <p id="card_text_2">2</p>
+                        <p id="card_text_suit_2">♣</p>
+                    </div>
+                    <div class="flex conteiner_text_card"> 
+                        <p id="card_text_3">3</p>
+                        <p id="card_text_suit_3">♣</p>
+                    </div>
+                    <div class="flex conteiner_text_card"> 
+                        <p id="card_text_4">4</p>
+                        <p id="card_text_suit_4">♣</p>
+                    </div>
+                    <div class="flex conteiner_text_card"> 
+                        <p id="card_text_5">5</p>
+                        <p id="card_text_suit_5">♣</p>
+                    </div>
+                </div> -->
+       
+        <div id="score-container" class="flex cards">
+            <div class="score-text-container flex label">
+                <p id="score_text">Your Score</p>
             </div>
-            <div class="card">
-                <select name="card_3" id="card_3" class="card_number" multiple>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3"selected>3</option>
-                    <option value="4" selected>4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="J">J</option>
-                    <option value="Q">Q</option>
-                    <option value="K">K</option>
-                </select>
-                <select name="card_suit_3" id="card_suit_3" class="card_suite" multiple>
-                    <option value="♣"selected>♣</option>
-                    <option value="♦" class="red">♦</option>
-                    <option value="♥" class="red">♥</option>
-                    <option value="♠">♠</option>
-                </select>
-            </div>
-            <div class="card">
-                <select name="card_4" id="card_4" class="card_number" multiple>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4" selected>4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="J">J</option>
-                    <option value="Q">Q</option>
-                    <option value="K">K</option>
-                </select>
-                <select name="card_suit_4" id="card_suit_4" class="card_suite" multiple>
-                    <option value="♣"selected>♣</option>
-                    <option value="♦" class="red">♦</option>
-                    <option value="♥" class="red">♥</option>
-                    <option value="♠">♠</option>
-                </select>
-            </div>
-            <div class="card">
-                <select name="card_5" id="card_5" class="card_number" multiple>
-                    <option value="1" >1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5"selected>5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="J">J</option>
-                    <option value="Q">Q</option>
-                    <option value="K">K</option>
-                </select>
-                <select name="card_suit_5" id="card_suit_5" class="card_suite" multiple>
-                    <option value="♣"selected>♣</option>
-                    <option value="♦" class="red">♦</option>
-                    <option value="♥" class="red">♥</option>
-                    <option value="♠">♠</option>
-                </select>
+            <div class="btn">
+                <button type="button" onclick="createUserCardHand()">START</button>
             </div>
         </div>
-            
-            <button type="button" onclick="getInput()">OK</button>
-            <div class="conteiner_text_cards flex">
-                <div class="flex conteiner_text_card"  >
-                    <p id="card_text_1">Card</p>
-                    <p id="card_text_suit_1">1</p>
-                </div>
-                <div class="flex conteiner_text_card"> 
-                    <p id="card_text_2">Card</p>
-                    <p id="card_text_suit_2">2</p>
-                </div>
-                <div class="flex conteiner_text_card"> 
-                    <p id="card_text_3">Card</p>
-                    <p id="card_text_suit_3">3</p>
-                </div>
-                <div class="flex conteiner_text_card"> 
-                    <p id="card_text_4">Card</p>
-                    <p id="card_text_suit_4">4</p>
-                </div>
-                <div class="flex conteiner_text_card"> 
-                    <p id="card_text_5">Card</p>
-                    <p id="card_text_suit_5">4</p>
-                </div>
-            </div>
-            <button type="button" onclick="createUserCardHand()">SCORE</button>
+        
     </div>
-    <div id="score"><p id="score_text"></p></div>
 
     <script src="./assets/scripts/evaluation_cards_in_user_hand.js"></script>
     <script src="./assets/scripts/poker_game_user_input.js"></script>

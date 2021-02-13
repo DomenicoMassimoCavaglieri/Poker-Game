@@ -1,4 +1,4 @@
-function getInput(){
+function getInput() {
     document.getElementById("card_text_1").innerHTML = document.getElementById("card_1").value;
     document.getElementById("card_text_suit_1").innerHTML = document.getElementById("card_suit_1").value;
     document.getElementById("card_text_2").innerHTML = document.getElementById("card_2").value;
@@ -22,10 +22,10 @@ function createUserCardHand() {
     userDeck.push([document.getElementById("card_2").value, document.getElementById("card_suit_2").value]);
     userDeck.push([document.getElementById("card_3").value, document.getElementById("card_suit_3").value]);
     userDeck.push([document.getElementById("card_4").value, document.getElementById("card_suit_4").value]);
-    userDeck.push([document.getElementById("card_5").value, document.getElementById("card_suit_5").value]);   
-    
+    userDeck.push([document.getElementById("card_5").value, document.getElementById("card_suit_5").value]);
 
-    
+
+
     userDeck.forEach(card => console.log("Card: " + card));
 
     //turns card values into integers
@@ -36,12 +36,9 @@ function createUserCardHand() {
 
 
     //Hand of cards is managed through two functions:
-
-    //Hand of all different cards
-    handWithDifferentCards(userDeck);
-
+    
     //Hand with at least two of the same cards
-    handWithEqualCards(userDeck);
+    handWithDifferentCards(userDeck);
 }
 
 //turns card values into integers
@@ -91,7 +88,6 @@ function cardValueIntoIntegers(cards) {
         }
     }
 }
-
 
 
 

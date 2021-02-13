@@ -3,41 +3,49 @@
 //Hand of all different cards
 function handWithDifferentCards(cards) {
     //Create the conditions to be evaluated for hand of all different cards
-     var straigth = cards[0][0] + 4 == cards[1][0] + 3 &&
-         cards[1][0] + 3 == cards[2][0] + 2 &&
-         cards[2][0] + 2 == cards[3][0] + 1 &&
-         cards[3][0] + 1 == cards[4][0];
- 
-     var aceStraigth = cards[0][0] == 1 && cards[1][0] == 10 &&
-         cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13;
- 
-     var flush = cards[0][1] === cards[1][1] &&
-         cards[2][1] === cards[3][1] &&
-         cards[3][1] === cards[4][1]
- 
-     var highCards = cards[0][0] != cards[1][0] &&
-         cards[1][0] != cards[2][0] &&
-         cards[2][0] != cards[3][0] &&
-         cards[3][0] != cards[4][0];
- 
-     //Analyze the conditions and print the result
-     if (aceStraigth && flush) {
-         console.log(">>Royal Straigth<<");
-     } else if (straigth && flush) {
-         console.log(">>Straigth Flush<<")
-     } else if (straigth) {
-         console.log(">>Straight<<");
-     } else if (aceStraigth) {
-         console.log(">>Straight<<");
-     } else if (flush) {
-         console.log(">>Flush<<")
-     } else if (highCards) {
-         console.log(">>High Cards<<");
-     }
- }
- 
- //Hand with at least two of the same cards
- function handWithEqualCards (cards) {
+    var straigth = cards[0][0] + 4 == cards[1][0] + 3 &&
+        cards[1][0] + 3 == cards[2][0] + 2 &&
+        cards[2][0] + 2 == cards[3][0] + 1 &&
+        cards[3][0] + 1 == cards[4][0];
+
+    var aceStraigth = cards[0][0] == 1 && cards[1][0] == 10 &&
+        cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13;
+
+    var flush = cards[0][1] === cards[1][1] &&
+        cards[2][1] === cards[3][1] &&
+        cards[3][1] === cards[4][1]
+
+    var highCards = cards[0][0] != cards[1][0] &&
+        cards[1][0] != cards[2][0] &&
+        cards[2][0] != cards[3][0] &&
+        cards[3][0] != cards[4][0];
+
+    //Analyze the conditions and print the result
+    if (aceStraigth && flush) {
+        document.getElementById("score_text").innerHTML = ">>Royal Straigth<<";
+        console.log(">>Royal Straigth<<");
+    } else if (straigth && flush) {
+        document.getElementById("score_text").innerHTML = ">>Straigth Flush<<";
+        console.log(">>Straigth Flush<<")
+    } else if (straigth) {
+        document.getElementById("score_text").innerHTML = ">>Straight<<";
+        console.log(">>Straight<<");
+    } else if (aceStraigth) {
+        document.getElementById("score_text").innerHTML = ">>Straight<<";
+        console.log(">>Straight<<");
+    } else if (flush) {
+        document.getElementById("score_text").innerHTML = ">>Flush<<";
+        console.log(">>Flush<<")
+    } else if (highCards) {
+        document.getElementById("score_text").innerHTML = ">>High Cards<<";
+        console.log(">>High Cards<<");
+    } else (handWithEqualCards(cards))
+}
+
+
+
+//Hand with at least two of the same cards
+function handWithEqualCards(cards) {
     //create a variable that contains the same cards
     var doubleCardsHands = [];
 
@@ -48,27 +56,34 @@ function handWithDifferentCards(cards) {
             }
         }
     }
-    
+
     //Analyze the conditions and print the result
     switch (doubleCardsHands.length) {
         case 1:
             console.log(">>Pair<<");
+            document.getElementById("score_text").innerHTML = ">>Pair<<";
             break;
         case 2:
             console.log(">>Two Pair<<");
+            document.getElementById("score_text").innerHTML = ">>Two Pair<<";
             break;
         case 3:
             console.log(">>Three of a Kind<<");
+            document.getElementById("score_text").innerHTML = ">>Three of a Kind<<";
             break;
         case 4:
             console.log(">>Full House<<");
+            document.getElementById("score_text").innerHTML = ">>Full House<<";
             break;
         case 6:
             console.log(">>Four of a Kind<<");
+            document.getElementById("score_text").innerHTML = ">>Four of a Kind<<";
             break;
         case 10:
             console.log(">>You have selected 5 cards with the same value...<<");
+            document.getElementById("score_text").innerHTML = ">>You have selected 5 cards with the same value...<<";
             break;
     }
-    
+
 }
+
