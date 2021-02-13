@@ -78,13 +78,13 @@ select {
 
 #score_text {
     color: #ffffff;
-    font-size: 40px;
+    font-size: 38px;
     font-weight: 500;
     margin: 0;
 }
 
 .btn {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 button {
