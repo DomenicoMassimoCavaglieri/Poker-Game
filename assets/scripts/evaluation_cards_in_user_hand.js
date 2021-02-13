@@ -1,51 +1,72 @@
-//Hand of cards is managed through two functions:
+////This function analyzes the user's card combination and prints the result
+function findFiveIdenticalCards(cards) {
+    if (cards[0][0] == cards[1][0] &&
+        cards[1][0] == cards[2][0] &&
+        cards[2][0] == cards[3][0] &&
+        cards[3][0] == cards[4][0]) {
+        return true;
+    } else return false;
+}
+        
 
-//Hand of all different cards
-function handWithDifferentCards(cards) {
-    //Create the conditions to be evaluated for hand of all different cards
-    var straigth = cards[0][0] + 4 == cards[1][0] + 3 &&
+function findstraigth(cards) {
+    if (cards[0][0] + 4 == cards[1][0] + 3 &&
         cards[1][0] + 3 == cards[2][0] + 2 &&
         cards[2][0] + 2 == cards[3][0] + 1 &&
-        cards[3][0] + 1 == cards[4][0];
+        cards[3][0] + 1 == cards[4][0]) {
+        return true;
+        } else return false;
+}
 
-    var aceStraigth = cards[0][0] == 1 && cards[1][0] == 10 &&
-        cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13;
+function findAceStraigth(cards) {
+    if (cards[0][0] == 1 && cards[1][0] == 10 &&
+        cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13) {
+        console.log(true);    
+        return true;
+        } else return false;
+}
 
-    var flush = cards[0][1] === cards[1][1] &&
+function findFlush(cards) {
+    if (cards[0][1] === cards[1][1] &&
         cards[2][1] === cards[3][1] &&
-        cards[3][1] === cards[4][1]
-
-    var highCards = cards[0][0] != cards[1][0] &&
-        cards[1][0] != cards[2][0] &&
-        cards[2][0] != cards[3][0] &&
-        cards[3][0] != cards[4][0];
-
-    //Analyze the conditions and print the result
-    if (aceStraigth && flush) {
-        document.getElementById("score_text").innerHTML = ">>Royal Straigth<<";
-        console.log(">>Royal Straigth<<");
-    } else if (straigth && flush) {
-        document.getElementById("score_text").innerHTML = ">>Straigth Flush<<";
-        console.log(">>Straigth Flush<<")
-    } else if (straigth) {
-        document.getElementById("score_text").innerHTML = ">>Straight<<";
-        console.log(">>Straight<<");
-    } else if (aceStraigth) {
-        document.getElementById("score_text").innerHTML = ">>Straight<<";
-        console.log(">>Straight<<");
-    } else if (flush) {
-        document.getElementById("score_text").innerHTML = ">>Flush<<";
-        console.log(">>Flush<<")
-    } else if (highCards) {
-        document.getElementById("score_text").innerHTML = ">>High Cards<<";
-        console.log(">>High Cards<<");
-    } else (handWithEqualCards(cards))
+        cards[3][1] === cards[4][1]) {
+        console.log(true);
+        return true;
+        } else return false;
 }
 
 
+function printScore(cards) {
+    if (findFiveIdenticalCards(cards)) {
+        document.getElementById("score_text").innerHTML = "5 dentical cards...";
+        console.log("5 dentical cards...");
+    } else if (findAceStraigth(cards) && findFlush(cards)) {
+        document.getElementById("score_text").innerHTML = "Royal Straigth";
+        console.log("Royal Straigth");
+    } else if (findstraigth(cards) && findFlush(cards)) {
+        document.getElementById("score_text").innerHTML = "Straigth Flush";
+        console.log("Straigth Flush")
+    } else if (findAceStraigth(cards)) {
+        document.getElementById("score_text").innerHTML = "Straight";
+        console.log("Straight");
+    } else if (findstraigth(cards)) {
+        document.getElementById("score_text").innerHTML = "Straight";
+        console.log("Straight");
+    } else if (CheckHEqualCards(cards).length == 6) {
+        document.getElementById("score_text").innerHTML = "Four of a Kind";
+        console.log("Four of a Kind");
+    } else if (CheckHEqualCards(cards).length == 4) {
+        document.getElementById("score_text").innerHTML = "Full House";
+        console.log("Full House");
+    } else if (findFlush(cards)) {
+        document.getElementById("score_text").innerHTML = "Flush";
+        console.log("Flush")
+    } else (otherCases(CheckHEqualCards(cards)))
+} 
 
-//Hand with at least two of the same cards
-function handWithEqualCards(cards) {
+
+    
+function CheckHEqualCards(cards) {
     //create a variable that contains the same cards
     var doubleCardsHands = [];
 
@@ -56,34 +77,30 @@ function handWithEqualCards(cards) {
             }
         }
     }
+    console.log(doubleCardsHands.length);
+    return doubleCardsHands;
+}
 
-    //Analyze the conditions and print the result
-    switch (doubleCardsHands.length) {
+
+function otherCases(cards) {
+    switch (cards.length) {
+        case 0:
+            document.getElementById("score_text").innerHTML = "High Cards";
+            console.log("High Cards");
+            break;
         case 1:
-            console.log(">>Pair<<");
-            document.getElementById("score_text").innerHTML = ">>Pair<<";
+            document.getElementById("score_text").innerHTML = "Pair";
+            console.log("Pair");
             break;
         case 2:
-            console.log(">>Two Pair<<");
-            document.getElementById("score_text").innerHTML = ">>Two Pair<<";
+            document.getElementById("score_text").innerHTML = "Two Pair";
+            console.log("Two Pair");
             break;
         case 3:
-            console.log(">>Three of a Kind<<");
-            document.getElementById("score_text").innerHTML = ">>Three of a Kind<<";
-            break;
-        case 4:
-            console.log(">>Full House<<");
-            document.getElementById("score_text").innerHTML = ">>Full House<<";
-            break;
-        case 6:
-            console.log(">>Four of a Kind<<");
-            document.getElementById("score_text").innerHTML = ">>Four of a Kind<<";
-            break;
-        case 10:
-            console.log(">>You have selected 5 cards with the same value...<<");
-            document.getElementById("score_text").innerHTML = ">>You have selected 5 cards with the same value...<<";
+            document.getElementById("score_text").innerHTML = "Three of a Kind";
+            console.log("Three of a Kind");
             break;
     }
-
 }
+
 

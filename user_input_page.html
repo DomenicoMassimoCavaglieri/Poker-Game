@@ -8,8 +8,8 @@
 </head>
 <body>
     <div id="main-section" class="flex">
-        <div class="title">
-            <h2 class="red label flex">Choose your cards</h2>
+        <div class="title label flex">
+            <h2 class="red flex">Choose your cards</h2>
         </div>
             <div class="cards flex">
                 <div class="card">
@@ -28,8 +28,8 @@
                         <option value="Q">Q</option>
                         <option value="K">K</option>
                     </select> 
-                    <select name="card_suit_1" id="card_suit_1" class="card_suite" >
-                        <option value="♣">♣</option>
+                    <select name="card_suit_1" id="card_suit_1" class="card_suite" size="4" >
+                        <option value="♣" selected>♣</option>
                         <option value="♦" class="red">♦</option>
                         <option value="♥" class="red">♥</option>
                         <option value="♠">♠</option>
@@ -51,8 +51,8 @@
                         <option value="Q">Q</option>
                         <option value="K">K</option>
                     </select>
-                    <select name="card_suit_2" id="card_suit_2" class="card_suite" >
-                        <option value="♣">♣</option>
+                    <select name="card_suit_2" id="card_suit_2" class="card_suite" size="4" >
+                        <option value="♣" selected>♣</option>
                         <option value="♦" class="red">♦</option>
                         <option value="♥" class="red">♥</option>
                         <option value="♠">♠</option>
@@ -74,8 +74,8 @@
                         <option value="Q">Q</option>
                         <option value="K">K</option>
                     </select>
-                    <select name="card_suit_3" id="card_suit_3" class="card_suite" >
-                        <option value="♣">♣</option>
+                    <select name="card_suit_3" id="card_suit_3" class="card_suite" size="4" >
+                        <option value="♣" selected>♣</option>
                         <option value="♦" class="red">♦</option>
                         <option value="♥" class="red">♥</option>
                         <option value="♠">♠</option>
@@ -97,8 +97,8 @@
                         <option value="Q">Q</option>
                         <option value="K">K</option>
                     </select>
-                    <select name="card_suit_4" id="card_suit_4" class="card_suite" >
-                        <option value="♣">♣</option>
+                    <select name="card_suit_4" id="card_suit_4" class="card_suite" size="4" >
+                        <option value="♣" selected>♣</option>
                         <option value="♦" class="red">♦</option>
                         <option value="♥" class="red">♥</option>
                         <option value="♠">♠</option>
@@ -120,8 +120,8 @@
                         <option value="Q">Q</option>
                         <option value="K">K</option>
                     </select>
-                    <select name="card_suit_5" id="card_suit_5" class="card_suite" >
-                        <option value="♣">♣</option>
+                    <select name="card_suit_5" id="card_suit_5" class="card_suite" size="4" >
+                        <option value="♣" selected>♣</option>
                         <option value="♦" class="red">♦</option>
                         <option value="♥" class="red">♥</option>
                         <option value="♠">♠</option>
@@ -153,11 +153,11 @@
                 </div> -->
        
         <div id="score-container" class="flex cards">
+            <div class="btn">
+                <button type="button" class="red" onclick="createUserCardHand()">START</button>
+            </div>
             <div class="score-text-container flex label">
                 <p id="score_text">Your Score</p>
-            </div>
-            <div class="btn">
-                <button type="button" onclick="createUserCardHand()">START</button>
             </div>
         </div>
         
