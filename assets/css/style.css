@@ -1,14 +1,28 @@
+.flex {
+    position: relative;
+    display: flex;
+    
+}
 .red {
     color: #ff0000;
 }
 
 .cards {
-    position: relative;
-    display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: darkgreen;
-    height: 150px;
+    height: 100px;
     width: 600px;
+}
+
+.conteiner_text_cards {
+    background-color: darkgreen;
+    width: 600px;
+}
+
+.conteiner_text_card {
+    width: 60px;
+    margin-left: 40px;
+    color: #ffffff;
 }
 
