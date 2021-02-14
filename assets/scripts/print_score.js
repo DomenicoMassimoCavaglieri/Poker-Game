@@ -25,11 +25,10 @@ function printScore(cards) {
         document.getElementById("score_text").innerHTML = "Flush";
         console.log("Flush")
     } else (otherCases(CheckHEqualCards(cards)))
-} 
+}
 
 
 //These functions check the possible combinations of cards
-
 function findFiveIdenticalCards(cards) {
     if (cards[0][0] == cards[1][0] &&
         cards[1][0] == cards[2][0] &&
@@ -38,22 +37,22 @@ function findFiveIdenticalCards(cards) {
         return true;
     } else return false;
 }
-        
+
 function findstraigth(cards) {
     if (cards[0][0] + 4 == cards[1][0] + 3 &&
         cards[1][0] + 3 == cards[2][0] + 2 &&
         cards[2][0] + 2 == cards[3][0] + 1 &&
         cards[3][0] + 1 == cards[4][0]) {
         return true;
-        } else return false;
+    } else return false;
 }
 
 function findAceStraigth(cards) {
     if (cards[0][0] == 1 && cards[1][0] == 10 &&
         cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13) {
-        console.log(true);    
+        console.log(true);
         return true;
-        } else return false;
+    } else return false;
 }
 
 function findFlush(cards) {
@@ -61,11 +60,12 @@ function findFlush(cards) {
         cards[2][1] === cards[3][1] &&
         cards[3][1] === cards[4][1]) {
         return true;
-        } else return false;
+    } else return false;
 }
 
 
-//create a variable that contains the identical cards
+//This function creates a variable which contains 
+//the number of times the cards are repeated
 function CheckHEqualCards(cards) {
 
     var doubleCardsHands = [];
@@ -80,7 +80,7 @@ function CheckHEqualCards(cards) {
     return doubleCardsHands;
 }
 
-
+//This funtion check the other possible combinations of cards
 function otherCases(cards) {
     switch (cards.length) {
         case 0:

@@ -12,20 +12,20 @@ function createUserCardHand() {
     userDeck.push([document.getElementById("card_5").value,
     document.getElementById("card_suit_5").value]);
 
-    //Prints the user's cards to the console
+    //Print the user's cards to the console
     userDeck.forEach(card => console.log("Card: " + card));
 
-    //Turns card values into integers
+    //Turn card values into integers
     cardValueIntoIntegers(userDeck);
 
-    //Sorts the hand of cards
+    //Sort the hand of cards
     userDeck.sort((a, b) => a[0] - b[0]);
-   
-    //analyzes the user's card combination and prints the result
+
+    //analyze the user's card combination and prints the result on the screen
     printScore(userDeck);
 }
 
-//turns card values into integers
+//This function turns card values into integers
 function cardValueIntoIntegers(cards) {
     for (var i = 0; i < cards.length; i++) {
 

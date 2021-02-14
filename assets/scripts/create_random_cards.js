@@ -1,4 +1,4 @@
-//Create the randomDeck of cards
+//This function creates a multidimensional array with the cards randomly chosen 
 function createRandomCardHand() {
     let randomDeck = [];
     for (let i = 1; i < 14; i++) {
@@ -15,67 +15,61 @@ function createRandomCardHand() {
         } else
             randomDeck.push([i, clubs], [i, diamonds], [i, hearts], [i, spades]);
     }
-    //Shuffle the randomDeck of cards
+
+    //Shuffle the cards
     fisherYates(randomDeck);
 
-    //5 Cards
+    //Keeps only the first 5 cards
     randomDeck.slice(0, 5);
 
-    //Prints the random cards to the console 
+    //Print the random cards to the console 
     console.log("-----------------");
     randomDeck.slice(0, 5).forEach(card => console.log("Card: " + card));
     console.log("-----------------");
 
-    //Turns "J" into 11, "Q" into 12, "K" into 13
+    //Turn "J" into 11, "Q" into 12, "K" into 13
     figuresIntoIntegers(randomDeck);
 
-    
+
     //Sort the hand of cards
     randomDeck.slice(0, 5).sort((a, b) => a[0] - b[0]);
 
     //Show random cards in input fields
     randomCardsInInputField(randomDeck.slice(0, 5).sort((a, b) => a[0] - b[0]));
 
-    //analyzes the user's card combination and print score on the screen
+    //analyze the user's card combination and print score on the screen
     printScore(randomDeck);
 }
 
-//Show random cards in input fields
+//This function shows random cards in input fields
 function randomCardsInInputField(cards) {
     integersIntoFigures(cards)
 
     document.getElementById("card_1").value = cards[0][0]
     document.getElementById("card_suit_1").value = cards[0][1]
-
     document.getElementById("card_2").value = cards[1][0]
     document.getElementById("card_suit_2").value = cards[1][1]
-
     document.getElementById("card_3").value = cards[2][0]
     document.getElementById("card_suit_3").value = cards[2][1]
-
     document.getElementById("card_4").value = cards[3][0]
     document.getElementById("card_suit_4").value = cards[3][1]
-
     document.getElementById("card_5").value = cards[4][0]
     document.getElementById("card_suit_5").value = cards[4][1]
-
-
 }
 
 
-//Shuffle the randomDeck of cards
+//This function shuffles the cards
 function fisherYates(cards) {
     var i, j, k;
-    for (i =cards.length - 1; i > 0; i--) {
+    for (i = cards.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * i)
-        k =cards[i]
-       cards[i] =cards[j]
-       cards[j] = k
+        k = cards[i]
+        cards[i] = cards[j]
+        cards[j] = k
     }
 }
 
-
-//Turns "J" into 11, "Q" into 12, "K" into 13
+//This function turns "J" into 11, "Q" into 12, "K" into 13
 function figuresIntoIntegers(cards) {
     for (var i = 0; i < cards.length; i++) {
 
@@ -91,7 +85,7 @@ function figuresIntoIntegers(cards) {
     }
 }
 
-//Turns 11 into "J", 12 into "Q", 13 into "K"
+//This function turns 11 into "J", 12 into "Q", 13 into "K"
 function integersIntoFigures(cards) {
     for (var i = 0; i < cards.length; i++) {
 
