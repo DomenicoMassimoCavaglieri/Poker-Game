@@ -1,6 +1,6 @@
 body {
     box-sizing: border-box;
-    background-color: rgb(63, 134, 53);
+    background-color: #3f8635;
     font-family:Arial, Helvetica, sans-serif;
     width: auto;
     height: auto;
@@ -66,8 +66,8 @@ select {
 }
 
 #score-container {
-    height: 60px;
-    margin-top: 50px;
+    height: 50px;
+    margin-top: 30px;
 }
 
 .score-text-container {
@@ -78,23 +78,30 @@ select {
 
 #score_text {
     color: #ffffff;
-    font-size: 38px;
+    font-size: 34px;
     font-weight: 500;
     margin: 0;
 }
 
-.btn {
-    margin-top: 40px;
+.btn_container {
+    margin:20px 0 30px 0;
 }
 
 button {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 280px;
+    height: 80px;
+    border-radius: 10PX;
     border: solid 1px  #ff0000;
     cursor: pointer;
     font-size: 30PX;
 }
+
+#btn_user_cards {
+    color:  #3f8635;
+    border: solid 1px  #36772e;
+    font-weight: 600;
+}
+
 /* 
 .conteiner_text_cards {
     justify-content: space-evenly;
