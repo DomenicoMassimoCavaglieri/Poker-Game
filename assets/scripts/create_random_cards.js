@@ -42,6 +42,8 @@ function createRandomCardHand() {
 
 //Show random cards in input fields
 function randomCardsInInputField(cards) {
+    integersIntoFigures(cards)
+
     document.getElementById("card_1").value = cards[0][0]
     document.getElementById("card_suit_1").value = cards[0][1]
 
@@ -85,6 +87,22 @@ function figuresIntoIntegers(cards) {
         }
         if (cards[i][0] == "K") {
             cards[i][0] = 13
+        }
+    }
+}
+
+//Turns 11 into "J", 12 into "Q", 13 into "K"
+function integersIntoFigures(cards) {
+    for (var i = 0; i < cards.length; i++) {
+
+        if (cards[i][0] == 11) {
+            cards[i][0] = "J"
+        }
+        if (cards[i][0] == 12) {
+            cards[i][0] = "Q"
+        }
+        if (cards[i][0] == 13) {
+            cards[i][0] = "K"
         }
     }
 }
