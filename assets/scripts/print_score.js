@@ -60,7 +60,6 @@ function findFlush(cards) {
     if (cards[0][1] === cards[1][1] &&
         cards[2][1] === cards[3][1] &&
         cards[3][1] === cards[4][1]) {
-        console.log(true);
         return true;
         } else return false;
 }
@@ -68,7 +67,7 @@ function findFlush(cards) {
 
 //create a variable that contains the identical cards
 function CheckHEqualCards(cards) {
-    
+
     var doubleCardsHands = [];
 
     for (var i = 0; i < cards.length; i++) {
@@ -78,7 +77,6 @@ function CheckHEqualCards(cards) {
             }
         }
     }
-    console.log(doubleCardsHands.length);
     return doubleCardsHands;
 }
 
