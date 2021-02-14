@@ -13,7 +13,9 @@ function createUserCardHand() {
     document.getElementById("card_suit_5").value]);
 
     //Print the user's cards to the console
+    console.log("-----------------");
     userDeck.forEach(card => console.log("Card: " + card));
+    console.log("-----------------");
 
     //Turn card values into integers
     cardValueIntoIntegers(userDeck);

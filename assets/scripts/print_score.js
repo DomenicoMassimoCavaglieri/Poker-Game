@@ -1,4 +1,4 @@
-////This function analyzes the user's card combination and prints the result
+////This function analyzes the cards combination and prints the result
 function printScore(cards) {
     if (findFiveIdenticalCards(cards)) {
         document.getElementById("score_text").innerHTML = "5 dentical cards...";
