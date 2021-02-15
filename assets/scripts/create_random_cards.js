@@ -1,22 +1,15 @@
 
 var cardsDeck = createDeck();
 cardsDeck.map(card => createDeck(card));
-console.log("Deck of poker cards:" + "(" + cardsDeck.length + ")" + " " + cardsDeck);
 
 var shuffledCardsDeck = shuffle(cardsDeck);
-console.log("Shuffled Poker Cards Deck:"+ "(" +  shuffledCardsDeck.length + ")" + " " + shuffledCardsDeck);
 
 var cardsHand = shuffledCardsDeck.slice(0, 5);
-console.log("Your cards:" + " " + cardsHand);
 
 var integersCardsHands = figuresIntoIntegers(cardsHand);
-console.log(integersCardsHands);
 
 integersCardsHands.sort((a, b) => a[0] - b[0]);
 
-var textScore = evaluateCardsHand(integersCardsHands, textScore);
-
-console.log(textScore);
 
 function createDeck() {
     let deck = [];

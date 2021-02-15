@@ -1,9 +1,11 @@
-// This function accepts a multidimensional array (number, seed) 
-//and a variable as arguments. 
+// The function evaluateCardsHand accepts 
+//a multidimensional array (integer 1-13, suit) as arguments.
 //Analyze array values based on poker scoring rules. 
-//Returns a string containing the name of the score.
+//Returns a string containing the name of the score:
 
-function evaluateCardsHand(cards, score) {
+var textScore = evaluateCardsHand(integersCardsHands);
+
+function evaluateCardsHand(cards) {
     if (findFiveIdenticalCards(cards)) {
         score = "5 dentical cards...";
         return score;
@@ -28,11 +30,11 @@ function evaluateCardsHand(cards, score) {
     } else if (findFlush(cards)) {
         score = "Flush";
         return score;
-    } else return otherCases(CheckEqualCards(cards), score);
+    } else return otherCases(CheckEqualCards(cards));
 }
 
 //This funtion check the other possible combinations of cards
-function otherCases(cards, score) {
+function otherCases(cards) {
     switch (cards.length) {
         case 0:
             score = "High Cards";
