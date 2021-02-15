@@ -7,8 +7,8 @@ function cardsHandPrintingConsole(cards, hand) {
     console.log("Your cards:" + " " + hand);
 }
 
-function randomCardsPrintngConsole(deckReadyForEvaluation, textScore) {
-    console.log(deckReadyForEvaluation);
+function randomCardsEvaluationPrintngConsole(deckReadyForEvaluation, textScore) {
+    console.log("Cards ready fo eveluation:" + " " + deckReadyForEvaluation);
     console.log(textScore);
     console.log("-------------------------------------")
 }

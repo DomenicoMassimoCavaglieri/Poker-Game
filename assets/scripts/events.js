@@ -3,10 +3,12 @@ function startRandom() {
     cardsDeckPrintingConsole();
     fisherYates(cardsDeck);
     var cardsHand = createCardsHand(cardsDeck);
+    randomCardsInInputField(cardsHand);
     cardsHandPrintingConsole(cardsDeck, cardsHand);
     var integersCardsHand = figuresIntoIntegers(cardsHand);
     var deckReadyForEvaluation = integersCardsHand.sort((a, b) => a[0] - b[0]);
     var textScore = evaluateCardsHand(deckReadyForEvaluation);
-    randomCardsPrintngConsole(deckReadyForEvaluation, textScore);
+    randomCardsEvaluationPrintngConsole(deckReadyForEvaluation, textScore);
     printingScreen(textScore);
+    
 }
