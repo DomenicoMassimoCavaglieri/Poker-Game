@@ -1,9 +1,14 @@
-console.log("Deck of poker cards:" + "(" + cardsDeck.length + ")" + " " + cardsDeck);
+function cardsDeckPrintingConsole() {
+    console.log("Deck of poker cards:" + "(" + createPokerDeck().length + ")" + " " + createPokerDeck());
+}
 
-console.log("Shuffled Poker Cards Deck:"+ "(" +  shuffledCardsDeck.length + ")" + " " + shuffledCardsDeck);
+function cardsHandPrintingConsole(cards, hand) {
+    console.log("Shuffled Poker Cards Deck:"+ "(" + cards.length + ")" + " " + cards);
+    console.log("Your cards:" + " " + hand);
+}
 
-console.log("Your cards:" + " " + cardsHand);
-
-console.log(integersCardsHands);
-
-console.log(textScore);
+function randomCardsPrintngConsole(deckReadyForEvaluation, textScore) {
+    console.log(deckReadyForEvaluation);
+    console.log(textScore);
+    console.log("-------------------------------------")
+}

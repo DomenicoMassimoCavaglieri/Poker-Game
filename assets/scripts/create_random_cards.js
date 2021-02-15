@@ -1,17 +1,14 @@
+function createCardsHand(cards) {
+    return cards.slice(0, 5);
+}
 
-var cardsDeck = createDeck();
-cardsDeck.map(card => createDeck(card));
+function createPokerDeck() {
+    var cardsDeck = pokerDeckModel();
+    cardsDeck.map(card => pokerDeckModel(card));
+    return cardsDeck;
+}
 
-var shuffledCardsDeck = shuffle(cardsDeck);
-
-var cardsHand = shuffledCardsDeck.slice(0, 5);
-
-var integersCardsHands = figuresIntoIntegers(cardsHand);
-
-integersCardsHands.sort((a, b) => a[0] - b[0]);
-
-
-function createDeck() {
+function pokerDeckModel() {
     let deck = [];
     for (let i = 1; i < 14; i++) {
         let clubs = "♣";
@@ -30,21 +27,19 @@ function createDeck() {
     return deck;
 }
 
-function shuffle(array) {
-    var copy = [], n = array.length, i;
-
-    while (n) {
-
-        i = Math.floor(Math.random() * n--);
-
-        copy.push(array.splice(i, 1)[0]);
+//This function shuffles the cards
+function fisherYates(cards) {
+    var i, j, k;
+    for (i = cards.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * i)
+        k = cards[i]
+        cards[i] = cards[j]
+        cards[j] = k
     }
-    return copy;
 }
 
 function figuresIntoIntegers(cards) {
     for (var i = 0; i < cards.length; i++) {
-
         if (cards[i][0] == "J") {
             cards[i][0] = 11
         }
@@ -58,13 +53,7 @@ function figuresIntoIntegers(cards) {
     return cards;
 }
 
-function findFlush(cards) {
-    if (cards[0][1] === cards[1][1] &&
-        cards[2][1] === cards[3][1] &&
-        cards[3][1] === cards[4][1]) {
-        return true;
-    } else return false;
-}
+
 
 
 
