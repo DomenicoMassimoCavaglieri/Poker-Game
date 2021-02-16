@@ -17,8 +17,8 @@ function createPokerDeck() {
     return deck;
 }
 
-//This function shuffles the cards
-function fisherYates(deck) {
+//This function uses the algorithm of fisherYates
+function shaffle(deck) {
     var i, j, k;
     for (i = deck.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * i)

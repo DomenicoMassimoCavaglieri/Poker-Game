@@ -1,7 +1,7 @@
 function startRandom() {
     var cardsDeck = createPokerDeck();
     cardsDeckPrintingConsole();
-    fisherYates(cardsDeck);
+    shaffle(cardsDeck);
     shaffledCardsDeckPrintingConsole(cardsDeck);
     var cardsHand = createCardsHand(cardsDeck);
     randomCardsInInputField(cardsHand);
