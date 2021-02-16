@@ -74,7 +74,6 @@ function findstraigth(cards) {
 function findAceStraigth(cards) {
     if (cards[0][0] == 1 && cards[1][0] == 10 &&
         cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13) {
-        console.log(true);
         return true;
     } else return false;
 }

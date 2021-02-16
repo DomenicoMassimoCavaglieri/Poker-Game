@@ -1,13 +1,3 @@
-function createCardsHand(cards) {
-    return cards.slice(0, 5);
-}
-
-function createPokerDeck() {
-    var cardsDeck = pokerDeckModel();
-    cardsDeck.map(card => pokerDeckModel(card));
-    return cardsDeck;
-}
-
 function pokerDeckModel() {
     let deck = [];
     for (let i = 1; i < 14; i++) {
@@ -27,6 +17,12 @@ function pokerDeckModel() {
     return deck;
 }
 
+function createPokerDeck() {
+    var cardsDeck = pokerDeckModel();
+    cardsDeck.map(card => pokerDeckModel(card));
+    return cardsDeck;
+}
+
 //This function shuffles the cards
 function fisherYates(cards) {
     var i, j, k;
@@ -36,6 +32,10 @@ function fisherYates(cards) {
         cards[i] = cards[j]
         cards[j] = k
     }
+}
+
+function createCardsHand(cards) {
+    return cards.slice(0, 5);
 }
 
 function figuresIntoIntegers(cards) {

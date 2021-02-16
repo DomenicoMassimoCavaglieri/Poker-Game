@@ -1,17 +1,30 @@
 //This function creates a multidimensional array with the cards chosen by the user
-function getUserCardsHand() {
-    let userHand = [];
-    userHand.push([document.getElementById("card_1").value,
+function createUserCardHand() {
+    let userDeck = [];
+    userDeck.push([document.getElementById("card_1").value,
     document.getElementById("card_suit_1").value]);
-    userHand.push([document.getElementById("card_2").value,
+    userDeck.push([document.getElementById("card_2").value,
     document.getElementById("card_suit_2").value]);
-    userHand.push([document.getElementById("card_3").value,
+    userDeck.push([document.getElementById("card_3").value,
     document.getElementById("card_suit_3").value]);
-    userHand.push([document.getElementById("card_4").value,
+    userDeck.push([document.getElementById("card_4").value,
     document.getElementById("card_suit_4").value]);
-    userHand.push([document.getElementById("card_5").value,
+    userDeck.push([document.getElementById("card_5").value,
     document.getElementById("card_suit_5").value]);
-    return userHand;
+
+    //Print the user's cards to the console
+    console.log("-----------------");
+    userDeck.forEach(card => console.log("Card: " + card));
+    console.log("-----------------");
+
+    //Turn card values into integers
+    cardValueIntoIntegers(userDeck);
+
+    //Sort the hand of cards
+    userDeck.sort((a, b) => a[0] - b[0]);
+
+    //analyze the user's card combination and prints the result on the screen
+    printScore(userDeck);
 }
 
 //This function turns card values into integers
@@ -60,5 +73,4 @@ function cardValueIntoIntegers(cards) {
             cards[i][0] = 13
         }
     }
-    return cards;
 }
