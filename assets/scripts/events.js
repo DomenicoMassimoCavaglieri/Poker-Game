@@ -1,9 +1,9 @@
 function startRandom() {
-    var cardsDeck = createPokerDeck();
+    var cardsDeck = getPokerDeck();
     cardsDeckPrintingConsole();
     shaffle(cardsDeck);
     shaffledCardsDeckPrintingConsole(cardsDeck);
-    var cardsHand = createCardsHand(cardsDeck);
+    var cardsHand = getCardsHand(cardsDeck);
     randomCardsInInputField(cardsHand);
     cardsHandPrintingConsole(cardsHand);
     figuresIntoIntegers(cardsHand);

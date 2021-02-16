@@ -1,5 +1,5 @@
 function cardsDeckPrintingConsole() {
-    console.log("Deck of poker cards:" + "(" + createPokerDeck().length + ")" + " " + createPokerDeck());
+    console.log("Deck of poker cards:" + "(" + getPokerDeck().length + ")" + " " + getPokerDeck());
 }
 
 function shaffledCardsDeckPrintingConsole(cards) {

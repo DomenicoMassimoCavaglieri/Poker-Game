@@ -1,4 +1,4 @@
-function createPokerDeck() {
+function getPokerDeck() {
     let deck = [];
     for (let i = 1; i < 14; i++) {
         let clubs = "♣";
@@ -28,7 +28,7 @@ function shaffle(deck) {
     }
 }
 
-function createCardsHand(deck) {
+function getCardsHand(deck) {
     return deck.slice(0, 5);
 }
 
