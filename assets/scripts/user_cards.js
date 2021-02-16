@@ -60,5 +60,4 @@ function cardValueIntoIntegers(cards) {
             cards[i][0] = 13
         }
     }
-    return cards;
 }

@@ -53,15 +53,20 @@ body {
     border-radius: 10px 10px 0 0;
 }
 
-.title {
+.title_box {
     width: 320px;
     height: 90px;
     margin: 0;
+    text-shadow: rgb(68, 68, 68) 0.5px 0.5px 0.5px; 
 }
 
-.title h5 {
-   margin-top: 5px;
-   text-shadow: rgb(68, 68, 68) 0.5px 0.5px 0.5px; 
+.title_box p {
+   font-size: 14px;
+   
+}
+
+.title {
+    font-size: 20px;
 }
 
 select {

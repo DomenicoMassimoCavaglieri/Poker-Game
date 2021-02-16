@@ -1,4 +1,4 @@
-function pokerDeckModel() {
+function createPokerDeck() {
     let deck = [];
     for (let i = 1; i < 14; i++) {
         let clubs = "♣";
@@ -17,38 +17,31 @@ function pokerDeckModel() {
     return deck;
 }
 
-function createPokerDeck() {
-    var cardsDeck = pokerDeckModel();
-    cardsDeck.map(card => pokerDeckModel(card));
-    return cardsDeck;
-}
-
 //This function shuffles the cards
-function fisherYates(cards) {
+function fisherYates(deck) {
     var i, j, k;
-    for (i = cards.length - 1; i > 0; i--) {
+    for (i = deck.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * i)
-        k = cards[i]
-        cards[i] = cards[j]
-        cards[j] = k
+        k = deck[i]
+        deck[i] = deck[j]
+        deck[j] = k
     }
 }
 
-function createCardsHand(cards) {
-    return cards.slice(0, 5);
+function createCardsHand(deck) {
+    return deck.slice(0, 5);
 }
 
-function figuresIntoIntegers(cards) {
-    for (var i = 0; i < cards.length; i++) {
-        if (cards[i][0] == "J") {
-            cards[i][0] = 11
+function figuresIntoIntegers(deck) {
+    for (var i = 0; i < deck.length; i++) {
+        if (deck[i][0] == "J") {
+            deck[i][0] = 11
         }
-        if (cards[i][0] == "Q") {
-            cards[i][0] = 12
+        if (deck[i][0] == "Q") {
+            deck[i][0] = 12
         }
-        if (cards[i][0] == "K") {
-            cards[i][0] = 13
+        if (deck[i][0] == "K") {
+            deck[i][0] = 13
         }
     }
-    return cards;
 }

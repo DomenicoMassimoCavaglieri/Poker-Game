@@ -14,19 +14,3 @@ function randomCardsInInputField(cards) {
     document.getElementById("card_5").value = cards[4][0]
     document.getElementById("card_suit_5").value = cards[4][1]
 }
-
-//This function turns 11 into "J", 12 into "Q", 13 into "K"
-function integersIntoFigures(cards) {
-    for (var i = 0; i < cards.length; i++) {
-
-        if (cards[i][0] == 11) {
-            cards[i][0] = "J"
-        }
-        if (cards[i][0] == 12) {
-            cards[i][0] = "Q"
-        }
-        if (cards[i][0] == 13) {
-            cards[i][0] = "K"
-        }
-    }
-}

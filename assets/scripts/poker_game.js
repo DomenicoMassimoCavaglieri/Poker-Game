@@ -3,32 +3,35 @@
 //Analyze array values based on poker scoring rules. 
 //Returns a string containing the name of the score:
 
+var fiveIdenticalCards = "5 identical cards...";
+var royalStraigth = "Royal Straigth";
+var straigthFlush ="Straigth Flush";
+var straight = "Straight";
+var fourOfAKind = "Four of a Kind";
+var fullHouse = "Full House";
+var Flush = "Flush";
+var highCards = "High Cards";
+var pair = "Pair";
+var twoPair = "Two Pair";
+var threeOfAKind = "Three of a Kind";
+
 function evaluateCardsHand(cards) {
-    var score;
     if (findFiveIdenticalCards(cards)) {
-        score = "5 dentical cards...";
-        return score;
+        return fiveIdenticalCards;
     } else if (findAceStraigth(cards) && findFlush(cards)) {
-        score = "Royal Straigth";
-        return score;
+        return royalStraigth;
     } else if (findstraigth(cards) && findFlush(cards)) {
-        score = "Straigth Flush";
-        return score;
+        return  straigthFlush;
     } else if (findAceStraigth(cards)) {
-        score = "Straight";
-        return score;
+        return straight;
     } else if (findstraigth(cards)) {
-        score = "Straight";
-        return score;
+        return straight;
     } else if (CheckEqualCards(cards).length == 6) {
-        score = "Four of a Kind";
-        return score;
+        return fourOfAKind;
     } else if (CheckEqualCards(cards).length == 4) {
-        score = "Full House";
-        return score;
+        return fullHouse;
     } else if (findFlush(cards)) {
-        score = "Flush";
-        return score;
+        return Flush;
     } else return otherCases(CheckEqualCards(cards));
 }
 
@@ -36,52 +39,41 @@ function evaluateCardsHand(cards) {
 function otherCases(cards) {
     switch (cards.length) {
         case 0:
-            score = "High Cards";
-            return score;
+            return highCards;
         case 1:
-            score = "Pair";
-            return score;
+            return pair;
         case 2:
-            score = "Two Pair";
-            return score;
+            return twoPair;
         case 3:
-            score = "Three of a Kind";
-            return score;
+            return threeOfAKind;
     }
 }
 
 //These functions check the possible combinations of cards
 function findFiveIdenticalCards(cards) {
-    if (cards[0][0] == cards[1][0] &&
+    return cards[0][0] == cards[1][0] &&
         cards[1][0] == cards[2][0] &&
         cards[2][0] == cards[3][0] &&
-        cards[3][0] == cards[4][0]) {
-        return true;
-    } else return false;
+        cards[3][0] == cards[4][0]
 }
 
 function findstraigth(cards) {
-    if (cards[0][0] + 4 == cards[1][0] + 3 &&
+    return cards[0][0] + 4 == cards[1][0] + 3 &&
         cards[1][0] + 3 == cards[2][0] + 2 &&
         cards[2][0] + 2 == cards[3][0] + 1 &&
-        cards[3][0] + 1 == cards[4][0]) {
-        return true;
-    } else return false;
+        cards[3][0] + 1 == cards[4][0]
 }
 
 function findAceStraigth(cards) {
-    if (cards[0][0] == 1 && cards[1][0] == 10 &&
-        cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13) {
-        return true;
-    } else return false;
+    return cards[0][0] == 1 && cards[1][0] == 10 &&
+        cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13
 }
 
 function findFlush(cards) {
-    if (cards[0][1] === cards[1][1] &&
-        cards[2][1] === cards[3][1] &&
-        cards[3][1] === cards[4][1]) {
-        return true;
-    } else return false;
+    return cards[0][1] == cards[1][1] &&
+        cards[1][1] == cards[2][1] &&
+        cards[2][1] == cards[3][1] &&
+        cards[3][1] == cards[4][1]
 }
 
 //This function creates a variable which contains 
