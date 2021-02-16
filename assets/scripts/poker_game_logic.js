@@ -1,9 +1,7 @@
 // The function evaluateCardsHand accepts 
-//a multidimensional array (integer 1-13, suit) as arguments.
+//a multidimensional array [[integer 1-13, suit],[]] as arguments.
 //Analyze array values based on poker scoring rules. 
 //Returns a string containing the name of the score:
-
-
 
 function evaluateCardsHand(cards) {
     var score;

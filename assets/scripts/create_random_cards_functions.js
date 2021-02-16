@@ -52,8 +52,3 @@ function figuresIntoIntegers(cards) {
     }
     return cards;
 }
-
-
-
-
-

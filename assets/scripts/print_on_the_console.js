@@ -15,5 +15,3 @@ function cardsToEvaluatePrintngConsole(deckReadyForEvaluation, textScore) {
     console.log(textScore);
     console.log("-------------------------------------")
 }
-
-

@@ -2,10 +2,7 @@ function printingScreen(text){
     document.getElementById("score_text").innerHTML = text;
 }
 
-
 function randomCardsInInputField(cards) {
-    //integersIntoFigures(cards)
-
     document.getElementById("card_1").value = cards[0][0]
     document.getElementById("card_suit_1").value = cards[0][1]
     document.getElementById("card_2").value = cards[1][0]
