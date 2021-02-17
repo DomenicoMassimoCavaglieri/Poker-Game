@@ -137,5 +137,11 @@ button {
     cursor: pointer;
     font-size: 20PX;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); 
+    transform: scale(1); 
+    transition: all 0.2s 0s ease-in-out;  
+}
+
+button:hover {
+    transform: scale(1.05); 
 }
 
