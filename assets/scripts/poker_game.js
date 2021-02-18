@@ -14,7 +14,7 @@ var straight = "Straight";
 var fourOfAKind = "Four of a Kind";
 var fullHouse = "Full House";
 var Flush = "Flush";
-var highCards = "High Cards";
+var highCard = "High Card";
 var pair = "Pair";
 var twoPair = "Two Pair";
 var threeOfAKind = "Three of a Kind";
@@ -43,7 +43,7 @@ function evaluateCardsHand(cards) {
 function otherCases(cards) {
     switch (cards.length) {
         case 0:
-            return highCards;
+            return highCard;
         case 1:
             return pair;
         case 2:
