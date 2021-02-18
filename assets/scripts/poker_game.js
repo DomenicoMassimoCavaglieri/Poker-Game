@@ -1,9 +1,11 @@
-// The function evaluateCardsHand accepts 
+//The function evaluateCardsHand: 
 //Input: a possible Poker hand in the form of a 
 //multidimensional array of length 5 
 //[[integer 1-13, suit], [[integer 1-13, suit] ...], 
 //sorted in ascending order according to the card number 
-//(order seeds is indifferent).
+//(order suit is indifferent).
+//Task: Analyze the input according to the rules of the game of Poker.
+//Output: Returns the string with the result.
 
 var fiveIdenticalCards = "5 identical cards...";
 var royalStraigth = "Royal Straigth";
