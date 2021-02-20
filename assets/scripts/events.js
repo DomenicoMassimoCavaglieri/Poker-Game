@@ -1,8 +1,8 @@
 function startRandom() {
     var cardsDeck = getPokerDeck();
     cardsDeckPrintingConsole();
-    shaffle(cardsDeck);
-    shaffledCardsDeckPrintingConsole(cardsDeck);
+    shuffle(cardsDeck);
+    shuffledCardsDeckPrintingConsole(cardsDeck);
     var cardsHand = getCardsHand(cardsDeck);
     randomCardsInInputField(cardsHand);
     cardsHandPrintingConsole(cardsHand);
