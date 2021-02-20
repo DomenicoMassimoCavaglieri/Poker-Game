@@ -37,10 +37,10 @@ function figuresIntoIntegers(deck) {
         if (deck[i][0] == "J") {
             deck[i][0] = 11
         }
-        if (deck[i][0] == "Q") {
+        else if (deck[i][0] == "Q") {
             deck[i][0] = 12
         }
-        if (deck[i][0] == "K") {
+        else if (deck[i][0] == "K") {
             deck[i][0] = 13
         }
     }
