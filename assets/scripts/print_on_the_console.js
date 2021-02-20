@@ -2,7 +2,7 @@ function cardsDeckPrintingConsole() {
     console.log("Deck of poker cards:" + "(" + getPokerDeck().length + ")" + " " + getPokerDeck());
 }
 
-function shaffledCardsDeckPrintingConsole(cards) {
+function shuffledCardsDeckPrintingConsole(cards) {
     console.log("Shuffled Poker Cards Deck:"+ "(" + cards.length + ")" + " " + cards);
 }
 

@@ -21,42 +21,40 @@ function cardValueIntoIntegers(cards) {
         if (cards[i][0] == "1") {
             cards[i][0] = 1
         }
-        if (cards[i][0] == "2") {
+        else if (cards[i][0] == "2") {
             cards[i][0] = 2
         }
-        if (cards[i][0] == "3") {
+        else if (cards[i][0] == "3") {
             cards[i][0] = 3
         }
-        if (cards[i][0] == "4") {
+        else if (cards[i][0] == "4") {
             cards[i][0] = 4
         }
-        if (cards[i][0] == "5") {
+        else if (cards[i][0] == "5") {
             cards[i][0] = 5
         }
-        if (cards[i][0] == "6") {
+        else if (cards[i][0] == "6") {
             cards[i][0] = 6
-        } if (cards[i][0] == "7") {
+        } 
+        else if (cards[i][0] == "7") {
             cards[i][0] = 7
         }
-        if (cards[i][0] == "8") {
+        else if (cards[i][0] == "8") {
             cards[i][0] = 8
         }
-        if (cards[i][0] == "9") {
+        else if (cards[i][0] == "9") {
             cards[i][0] = 9
         }
-        if (cards[i][0] == "10") {
+        else if (cards[i][0] == "10") {
             cards[i][0] = 10
         }
-        if (cards[i][0] == "J") {
+        else if (cards[i][0] == "J") {
             cards[i][0] = 11
         }
-        if (cards[i][0] == "Q") {
+        else if (cards[i][0] == "Q") {
             cards[i][0] = 12
         }
-        if (cards[i][0] == "K") {
-            cards[i][0] = 13
-        }
-        if (cards[i][0] == "K") {
+        else if (cards[i][0] == "K") {
             cards[i][0] = 13
         }
     }

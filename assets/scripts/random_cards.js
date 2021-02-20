@@ -18,7 +18,7 @@ function getPokerDeck() {
 }
 
 //This function uses the algorithm of fisherYates
-function shaffle(deck) {
+function shuffle(deck) {
     var i, j, k;
     for (i = deck.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * i)
@@ -37,10 +37,10 @@ function figuresIntoIntegers(deck) {
         if (deck[i][0] == "J") {
             deck[i][0] = 11
         }
-        if (deck[i][0] == "Q") {
+        else if (deck[i][0] == "Q") {
             deck[i][0] = 12
         }
-        if (deck[i][0] == "K") {
+        else if (deck[i][0] == "K") {
             deck[i][0] = 13
         }
     }
