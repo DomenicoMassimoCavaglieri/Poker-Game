@@ -7,6 +7,7 @@
 //Task: Analyze the input according to the rules of the game of Poker.
 //Output: Returns the string with the result.
 
+var chooseFiveCards = "Choose 5 cards";
 var fiveIdenticalCards = "5 identical cards...";
 var royalStraigth = "Royal Straigth";
 var straigthFlush = "Straigth Flush";
@@ -27,7 +28,9 @@ var hightCard8 = "High Card, 8";
 var hightCard7 = "High Card, 7";
 
 function evaluateCardsHand(cards) {
-    if (findFiveIdenticalCards(cards)) {
+    if (findNoSelectedCards(cards)) {
+        return chooseFiveCards
+    } else if (findFiveIdenticalCards(cards)) {
         return fiveIdenticalCards;
     } else if (findAceStraigth(cards) && findFlush(cards)) {
         return royalStraigth;
@@ -46,6 +49,7 @@ function evaluateCardsHand(cards) {
     } else return otherCases(checkEqualCards(cards), cards);
 }
 
+    
 //This funtion check the other possible combinations of cards
 function otherCases(doubleCards, cards) {
     switch (doubleCards.length) {
@@ -61,6 +65,11 @@ function otherCases(doubleCards, cards) {
 }
 
 //These functions check the possible combinations of cards
+function findNoSelectedCards(cards) {
+    for (let i = 0; i < cards.length; i++)
+    return cards[i][0] === "";
+}
+
 function findFiveIdenticalCards(cards) {
     return cards[0][0] == cards[1][0] &&
         cards[1][0] == cards[2][0] &&

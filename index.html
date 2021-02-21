@@ -31,13 +31,15 @@
         <div id="section_1">
             <div class="title_box label flex">
                 <span class="title red">POKER GAME SCORE</span>
-                <p class="red">Learn poker scores</p>
-                <p>Choose your cards and press <span class="red">PLAY</span> <br> or try RANDOM CARDS</p>
+                <div class="radio_container flex">
+                    <input type="radio" name="option" checked class="red" onclick="displayRandomCards()">Random<br>Cards</button>
+                    <input type="radio" name="option" class="red" onclick="displayYourCards()">Choose<br>your cards</button>
+                </div>
             </div>
             <div class="cards flex">
                 <div class="card">
                     <select name="card_1" id="card_1" class="card_number">
-                        <option value="1">1</option>
+                        <option value="1">A</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -60,7 +62,7 @@
                 </div>
                 <div class="card">
                     <select name="card_2" id="card_2" class="card_number">
-                        <option value="1">1</option>
+                        <option value="1">A</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -83,7 +85,7 @@
                 </div>
                 <div class="card">
                     <select name="card_3" id="card_3" class="card_number">
-                        <option value="1">1</option>
+                        <option value="1">A</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -106,7 +108,7 @@
                 </div>
                 <div class="card">
                     <select name="card_4" id="card_4" class="card_number">
-                        <option value="1">1</option>
+                        <option value="1">A</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -129,7 +131,7 @@
                 </div>
                 <div class="card">
                     <select name="card_5" id="card_5" class="card_number">
-                        <option value="1">1</option>
+                        <option value="1">A</option>
                         <option value="2" selected>2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -147,12 +149,12 @@
                         <option value="♣" selected>♣</option>
                         <option value="♦" class="red">♦</option>
                         <option value="♥" class="red">♥</option>
-                        <option value="♠">♠</option>
+                        <option value="♠" selected>♠</option>
                     </select>
                 </div>
             </div>
         </div>
-        <div id="section_2">
+        <div id="section_2" class="flex">
             <div id="score-container" class="flex cards">
                 <div class="score-text-container flex">
                     <p id="score_text"></p>
@@ -160,11 +162,11 @@
             </div>
             <div class="btn_section flex">
                 <div class="btn_container">
-                    <button type="button" id="btn_user_cards" class="red" onclick="startUserInput()">PLAY</button>
+                    <button type="button" id="btn_user_cards" class="red" onclick="startUserInput()">YOUR SCORE</button>
                 </div>
                 <div class="btn_container">
                 </div>
-                <button type="button" id="btn_random_cards" class="red" onclick="startRandom()">RANDOM CARDS</button>
+                <button type="button" id="btn_random_cards" class="red" onclick="startRandom()">GIVE ME CARDS</button>
             </div>
         </div>
     </div>
