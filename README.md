@@ -1,5 +1,5 @@
 <h1>POKER GAME SCORE<h1>
-<img width="200" src="./assets/images/readme_img.png" alt="Screenshot app">
+<img width="200" src="./assets/images/readme_img_2.png" alt="Screenshot app">
 <h2>Learn poker scores<h2>
 <h3>Choose your cards and press PLAY<h3>
 <h4>or try RANDOM CARDS</h4>
