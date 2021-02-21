@@ -22,3 +22,25 @@ function startUserInput() {
     cardsToEvaluatePrintngConsole(userCardsReadyForEvaluation, textScore);
     printingScreen(textScore);
 }
+
+hideYourCards();
+resetValueInputField()
+
+function hideYourCards() {
+    document.getElementById("btn_user_cards").setAttribute("class", "display_none")
+}
+
+function displayRandomCards() {
+    resetValueInputField();
+    resetPrintingScreen()
+    document.getElementById("btn_user_cards").setAttribute("class", "display_none")
+    document.getElementById("btn_random_cards").setAttribute("class", "display_block red")
+
+}
+
+function displayYourCards() {
+    resetValueInputField();
+    resetPrintingScreen();
+    document.getElementById("btn_user_cards").setAttribute("class", "display_block red")
+    document.getElementById("btn_random_cards").setAttribute("class", "display_none")
+}
