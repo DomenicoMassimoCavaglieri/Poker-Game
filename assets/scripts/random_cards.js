@@ -1,5 +1,5 @@
 // This function creates a Poker deck: an array of 52 cards (value, suit):
-function getDeck() {
+function getPokerDeck() {
     let deck = [];
     for (let i = 1; i < 14; i++) {
         let clubs = "♣";
@@ -19,13 +19,15 @@ function getDeck() {
     return deck;
 }
 
-var cardsDeck = getDeck();
+var cardsDeck = getPokerDeck();
+console.log(cardsDeck);
 shuffle(cardsDeck);
 cardsHand = getCardsHand(cardsDeck);
-
-function getCardsHand(deck) {
-    return deck.slice(0, 5);
-}
+console.log(cardsDeck);
+cardsHand.forEach(card => console.log(card));
+figuresIntoIntegers(cardsHand);
+randomCardsReadyForEvaluation = figuresIntoIntegers(cardsHand);
+console.log(randomCardsReadyForEvaluation);
 
 //This function uses the algorithm of fisherYates
 function shuffle(deck) {
@@ -37,3 +39,25 @@ function shuffle(deck) {
         deck[j] = k
     }
 }
+
+// This function returns the hand of cards:
+function getCardsHand(deck) {
+    return deck.slice(0, 5);
+}
+    
+
+function figuresIntoIntegers(cards) {
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].value === "A") {
+            cards[i].value = 1;
+        } else if (cards[i].value === "J") {
+            cards[i].value = 11;
+        } else if (cards[i].value === "Q") {
+            cards[i].value = 12;
+        } else if (cards[i].value === "K") {
+            cards[i].value = 13;
+        }
+    }
+    return cards;
+}
+    
