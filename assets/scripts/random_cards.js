@@ -1,3 +1,32 @@
+function startRandom() {
+    cardsHand = remainingDeck.slice(0, 5);
+    cardsHand.forEach(card => console.log(card));
+    getRemainingDeck(remainingDeck);
+    printDeck(remainingDeck); 
+    var randomCardsReadyForEvaluation = cardsHand.map(figuresIntoIntegers).sort((a, b) => a - b);
+    console.log("----------------------");
+    console.log(randomCardsReadyForEvaluation);
+    console.log("----------------------");
+}
+
+function displayRandomCards() {
+    printDeck(getPokerDeck());
+    console.log("---------------------")
+    var cardsDeck = getPokerDeck();
+    shuffle(cardsDeck);
+    printDeck(cardsDeck);
+    cardsHand = cardsDeck.slice(0, 5);
+    cardsHand.forEach(card => console.log(card));
+    remainingDeck = getRemainingDeck(cardsDeck);
+    printDeck(remainingDeck);
+    var randomCardsReadyForEvaluation = cardsHand.map(figuresIntoIntegers).sort((a, b) => a - b);
+    console.log("----------------------");
+    console.log(randomCardsReadyForEvaluation);
+    console.log("----------------------");
+}
+
+
+
 // This function creates a Poker deck: an array of 52 cards (value, suit):
 function getPokerDeck() {
     let deck = [];
@@ -7,27 +36,26 @@ function getPokerDeck() {
         let hearts = "♥";
         let spades = "♠";
         if (i == 1) {
-            deck.push({ value: "A", suit: clubs }, {value: "A", suit: diamonds }, { value: "A", suit: hearts }, { value:"A", suit: spades });
+            deck.push({ value: "A", suit: clubs }, { value: "A", suit: diamonds }, { value: "A", suit: hearts }, { value: "A", suit: spades });
         } else if (i == 11) {
             deck.push({ value: "J", suit: clubs }, { value: "J", suit: diamonds }, { value: "J", suit: hearts }, { value: "J", suit: spades });
         } else if (i == 12) {
-            deck.push({ value: "Q", suite: clubs }, { value: "Q", suite: diamonds }, { value: "Q", suite: hearts }, { value: "Q", suite: spades });
+            deck.push({ value: "Q", suit: clubs }, { value: "Q", suit: diamonds }, { value: "Q", suit: hearts }, { value: "Q", suit: spades });
         } else if (i == 13) {
-            deck.push({ value: "K", suite: clubs }, { value: "K", suite: diamonds }, { value: "K", suite: hearts }, { value: "K", suite: spades });
-        } else deck.push({value: i, suite: clubs }, {value: i, suite: diamonds }, { value: i, suite: hearts}, { value: i, suite: spades });
+            deck.push({ value: "K", suit: clubs }, { value: "K", suit: diamonds }, { value: "K", suit: hearts }, { value: "K", suit: spades });
+        } else deck.push({ value: i, suit: clubs }, { value: i, suit: diamonds }, { value: i, suit: hearts }, { value: i, suit: spades });
     }
     return deck;
 }
 
-var cardsDeck = getPokerDeck();
-console.log(cardsDeck);
-shuffle(cardsDeck);
-cardsHand = getCardsHand(cardsDeck);
-console.log(cardsDeck);
-cardsHand.forEach(card => console.log(card));
-figuresIntoIntegers(cardsHand);
-randomCardsReadyForEvaluation = figuresIntoIntegers(cardsHand);
-console.log(randomCardsReadyForEvaluation);
+///////////////////////////////
+function printDeck(cards) {
+    var result = "";
+    for (card of cards) {
+        result += card.value + card.suit + " ";
+    }
+    console.log(cards.length + " " + result);
+}
 
 //This function uses the algorithm of fisherYates
 function shuffle(deck) {
@@ -41,23 +69,26 @@ function shuffle(deck) {
 }
 
 // This function returns the hand of cards:
-function getCardsHand(deck) {
-    return deck.slice(0, 5);
-}
-    
-
-function figuresIntoIntegers(cards) {
-    for (var i = 0; i < cards.length; i++) {
-        if (cards[i].value === "A") {
-            cards[i].value = 1;
-        } else if (cards[i].value === "J") {
-            cards[i].value = 11;
-        } else if (cards[i].value === "Q") {
-            cards[i].value = 12;
-        } else if (cards[i].value === "K") {
-            cards[i].value = 13;
-        }
+function getRemainingDeck(deck) {
+    while (deck.length >= 5) {
+        deck.splice(0,5);   
+        return deck;
     }
-    return cards;
+   
 }
-    
+
+//This function transforms card figures into integers
+function figuresIntoIntegers(card) {
+    switch (card.value) {
+        case "A":
+            return card.value = 1;
+        case "J":
+            return card.value = 11;
+        case "Q":
+            return card.value = 12;
+        case "K":
+            return card.value = 13;
+        default:
+            return card.value;
+    }
+}
