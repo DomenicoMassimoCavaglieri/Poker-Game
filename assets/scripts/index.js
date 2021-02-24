@@ -2,8 +2,9 @@ hideButton();
 resetValueInputField()
 
 var cardsDeck;
-var cardsHand;
-
+var randomCardsHand;
+var userCardsHand;
+var cardsValues;
 
 function displayRandomCards() {
     resetValueInputField();
@@ -11,18 +12,22 @@ function displayRandomCards() {
     document.getElementById("btn_user_cards").setAttribute("class", "display_none")
     document.getElementById("btn_random_cards").setAttribute("class", "display_block red")
     cardsDeck = getPokerDeck();
-    printingDeckConsole(cardsDeck);
+    printingCardsConsole(cardsDeck);
     shuffle(cardsDeck);
-    printingDeckConsole(cardsDeck);
-    cardsHand = cardsDeck.splice(0, 5);
-    randomCardsInInputField(cardsHand);
-    printingDeckConsole(cardsHand);
+    printingCardsConsole(cardsDeck);
+    randomCardsHand = cardsDeck.splice(0, 5);
+    randomCardsInInputField(randomCardsHand);
+    printingCardsConsole(randomCardsHand);
     printingCounter(cardsDeck);
-    printingDeckConsole(cardsDeck);
+    printingCardsConsole(cardsDeck);
+    cardsValues = getCardsValues(randomCardsHand);
+    console.log(cardsValues);
     console.log("-----------------------");
-    //var randomCardsReadyForEvaluation = cardsHand.map(figuresIntoIntegers).sort((a, b) => a - b);
+    
+    
+    //var randomCardsReadyForEvaluation = randomCardsHand.map(getCardsValues).sort((a, b) => a - b);
     //console.log(randomCardsReadyForEvaluation);
-    // var textScore = evaluateCardsHand(randomCardsReadyForEvaluation);
+    // var textScore = evaluaterandomCardsHand(randomCardsReadyForEvaluation);
     // cardsToEvaluatePrintngConsole(randomCardsReadyForEvaluation, textScore);
     // printingScreen(textScore);
 }
@@ -35,18 +40,20 @@ function displayYourCards() {
 }
 
 function startRandom() {
-    // var cardsHand = getCardsHand(cardsDeck);
+    // var randomCardsHand = getrandomCardsHand(cardsDeck);
     
-    // cardsHandPrintingConsole(cardsHand);
-    // figuresIntoIntegers(cardsHand);
-    // var randomCardsReadyForEvaluation = cardsHand.sort((a, b) => a[0] - b[0]);
+    // randomCardsHandPrintingConsole(randomCardsHand);
+    // getCardsValues(randomCardsHand);
+    // var randomCardsReadyForEvaluation = randomCardsHand.sort((a, b) => a[0] - b[0]);
     switch (cardsDeck.length > 5) {
         case true:
-            cardsHand = cardsDeck.splice(0, 5);
-            randomCardsInInputField(cardsHand);
+            randomCardsHand = cardsDeck.splice(0, 5);
+            randomCardsInInputField(randomCardsHand);
             printingCounter(cardsDeck);
-            printingDeckConsole(cardsHand);
-            printingDeckConsole(cardsDeck); 
+            printingCardsConsole(randomCardsHand);
+            printingCardsConsole(cardsDeck); 
+            cardsValues = getCardsValues(randomCardsHand);
+            console.log(cardsValues);
             console.log("----------------------")
             break;
         case false:
@@ -56,20 +63,24 @@ function startRandom() {
     
     
     
-    // var randomCardsReadyForEvaluation = cardsHand.map(figuresIntoIntegers).sort((a, b) => a - b);
-    // var textScore = evaluateCardsHand(randomCardsReadyForEvaluation);
+    // var randomCardsReadyForEvaluation = randomCardsHand.map(getCardsValues).sort((a, b) => a - b);
+    // var textScore = evaluaterandomCardsHand(randomCardsReadyForEvaluation);
     //cardsToEvaluatePrintngConsole(randomCardsReadyForEvaluation, textScore);
     //printingScreen(textScore);
 }
 
 function startUserInput() {
-    var userCardsHand = getUserCardsHand();
-    cardsHandPrintingConsole(userCardsHand);
-    cardValueIntoIntegers(userCardsHand);
-    var userCardsReadyForEvaluation = userCardsHand.sort((a, b) => a[0] - b[0]);
-    var textScore = evaluateCardsHand(userCardsReadyForEvaluation);
-    cardsToEvaluatePrintngConsole(userCardsReadyForEvaluation, textScore);
-    printingScreen(textScore);
+    userCardsHand = getUserCardsHand()
+    printingCardsConsole(userCardsHand);
+    //cardsValuesIntoIntegers(userCardsHand);
+    console.log(userCardsHand);
+    var userValue = getCardsValues(userCardsHand);
+    console.log(userValue);
+    console.log("----------------------")
+    // var userCardsReadyForEvaluation = userCardsHand.sort((a, b) => a[0] - b[0]);
+    //var textScore = evaluateuserCardsHand(userCardsHand);
+    // cardsToEvaluatePrintngConsole(userCardsReadyForEvaluation, textScore);
+    //printingScreen(textScore);
 }
 
 function hideButton() {
