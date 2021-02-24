@@ -1,9 +1,9 @@
-function cardsDeckPrintingConsole() {
-    console.log("Deck of poker cards:" + "(" + getPokerDeck().length + ")" + " " + getPokerDeck());
-}
-
-function shuffledCardsDeckPrintingConsole(cards) {
-    console.log("Shuffled Poker Cards Deck:"+ "(" + cards.length + ")" + " " + cards);
+function printingDeckConsole(cards) {
+    var result = "";
+    for (card of cards) {
+        result += card.value + card.suit + " ";
+    }
+    console.log(cards.length + " Cards: " + result);
 }
 
 function cardsHandPrintingConsole(hand) {
