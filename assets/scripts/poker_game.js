@@ -19,14 +19,14 @@ const FIVE_IDENTICAL_CARDS = "5 identical cards...";
 // var hightCard7 = "High Card, 7";
 
 function evaluateCardsHand(cards) {
-    if (findNoSelectedCards(cards)) {
+    if (findNoSelectedCards(getCardsValues(cards))) {
         return CHOOSE_FIVE_CARDS;
-    }  else if (findFiveIdenticalCards(cards)) {
+    } else if (findFiveIdenticalCards(cards)) {
         return FIVE_IDENTICAL_CARDS;
     }
 }
 
-    
+
 //This funtion check the other possible combinations of cards
 // function otherCases(doubleCards, cards) {
 //     switch (doubleCards.length) {
@@ -49,9 +49,10 @@ function evaluateCardsHand(cards) {
 
 //This function checks if all cards of the hand cards have been selected 
 function findNoSelectedCards(cards) {
-   for (let i = 0; i<cards.length; i++) {
-       return (cards[0].value === "") 
-   }
+    console.log(cards);
+    for (i = 0; i<cards.length; i++) {
+        return cards[i] === "" 
+    }
 }
 
 
@@ -59,7 +60,7 @@ function findNoSelectedCards(cards) {
 function findFiveIdenticalCards(cards) {
     var numberCard = card[0];
     return cards.every(function (card) {
-        card ===numberCard;
+        card === numberCard;
     });
 }
 
@@ -68,7 +69,7 @@ function getCardsValues(cards) {
     var valueCard = [];
     for (var i = 0; i < cards.length; i++) {
         if (cards[i].value === "1") {
-            valueCard.push (1)
+            valueCard.push(1)
         }
         else if (cards[i].value === "2") {
             valueCard.push(2)
@@ -84,7 +85,7 @@ function getCardsValues(cards) {
         }
         else if (cards[i].value === "6") {
             valueCard.push(6)
-        } 
+        }
         else if (cards[i].value === "7") {
             valueCard.push(7)
         }
