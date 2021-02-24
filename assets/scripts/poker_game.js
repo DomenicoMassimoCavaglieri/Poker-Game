@@ -1,145 +1,111 @@
-//The function evaluateCardsHand: 
-//Input: a possible Poker hand in the form of a 
-//multidimensional array of length 5 
-//[[integer 1-13, suit], [[integer 1-13, suit] ...], 
-//sorted in ascending order according to the card number 
-//(order suit is indifferent).
-//Task: Analyze the input according to the rules of the game of Poker.
-//Output: Returns the string with the result.
-
-var chooseFiveCards = "Choose 5 cards";
-var fiveIdenticalCards = "5 identical cards...";
-var royalStraigth = "Royal Straigth";
-var straigthFlush = "Straigth Flush";
-var straight = "Straight";
-var fourOfAKind = "Four of a Kind";
-var fullHouse = "Full House";
-var Flush = "Flush";
-var pair = "Pair";
-var twoPair = "Two Pair";
-var threeOfAKind = "Three of a Kind";
-var highCard1 = "High Card, Ace";
-var hightCardK = "High Card, K";
-var hightCardQ = "High Card, Q";
-var hightCardJ = "High Card, J";
-var hightCard10 = "High Card, 10";
-var hightCard9 = "High Card, 9";
-var hightCard8 = "High Card, 8";
-var hightCard7 = "High Card, 7";
+const CHOOSE_FIVE_CARDS = "Choose 5 cards";
+const FIVE_IDENTICAL_CARDS = "5 identical cards...";
+// var royalStraigth = "Royal Straigth";
+// var straigthFlush = "Straigth Flush";
+// var straight = "Straight";
+// var fourOfAKind = "Four of a Kind";
+// var fullHouse = "Full House";
+// var Flush = "Flush";
+// var pair = "Pair";
+// var twoPair = "Two Pair";
+// var threeOfAKind = "Three of a Kind";
+// var highCard1 = "High Card, Ace";
+// var hightCardK = "High Card, K";
+// var hightCardQ = "High Card, Q";
+// var hightCardJ = "High Card, J";
+// var hightCard10 = "High Card, 10";
+// var hightCard9 = "High Card, 9";
+// var hightCard8 = "High Card, 8";
+// var hightCard7 = "High Card, 7";
 
 function evaluateCardsHand(cards) {
     if (findNoSelectedCards(cards)) {
-        return chooseFiveCards
-    } else if (findFiveIdenticalCards(cards)) {
-        return fiveIdenticalCards;
-    } else if (findAceStraigth(cards) && findFlush(cards)) {
-        return royalStraigth;
-    } else if (findstraigth(cards) && findFlush(cards)) {
-        return straigthFlush;
-    } else if (findAceStraigth(cards)) {
-        return straight;
-    } else if (findstraigth(cards)) {
-        return straight;
-    } else if (checkEqualCards(cards).length == 6) {
-        return fourOfAKind;
-    } else if (checkEqualCards(cards).length == 4) {
-        return fullHouse;
-    } else if (findFlush(cards)) {
-        return Flush;
-    } else return otherCases(checkEqualCards(cards), cards);
+        return CHOOSE_FIVE_CARDS;
+    }  else if (findFiveIdenticalCards(cards)) {
+        return FIVE_IDENTICAL_CARDS;
+    }
 }
 
     
 //This funtion check the other possible combinations of cards
-function otherCases(doubleCards, cards) {
-    switch (doubleCards.length) {
-        case 0:
-            return evaluateHighCardScore(cards);
-        case 1:
-            return pair;
-        case 2:
-            return twoPair;
-        case 3:
-            return threeOfAKind;
-    }
-}
+// function otherCases(doubleCards, cards) {
+//     switch (doubleCards.length) {
+//         case 0:
+//             return evaluateHighCardScore(cards);
+//         case 1:
+//             return pair;
+//         case 2:
+//             return twoPair;
+//         case 3:
+//             return threeOfAKind;
+//     }
+// }
 
 //These functions check the possible combinations of cards
+
+
+
+
+
+//This function checks if all cards of the hand cards have been selected 
 function findNoSelectedCards(cards) {
-    for (let i = 0; i < cards.length; i++)
-    return cards[i][0] === "";
+   for (let i = 0; i<cards.length; i++) {
+       return (cards[0].value === "") 
+   }
 }
 
+
+//This function checks if 5 identical cards have been chosen
 function findFiveIdenticalCards(cards) {
-    return cards[0][0] == cards[1][0] &&
-        cards[1][0] == cards[2][0] &&
-        cards[2][0] == cards[3][0] &&
-        cards[3][0] == cards[4][0]
+    var numberCard = card[0];
+    return cards.every(function (card) {
+        card ===numberCard;
+    });
 }
 
-function findstraigth(cards) {
-    return cards[0][0] + 4 == cards[1][0] + 3 &&
-        cards[1][0] + 3 == cards[2][0] + 2 &&
-        cards[2][0] + 2 == cards[3][0] + 1 &&
-        cards[3][0] + 1 == cards[4][0]
-}
-
-function findAceStraigth(cards) {
-    return cards[0][0] == 1 && cards[1][0] == 10 &&
-        cards[2][0] == 11 && cards[3][0] == 12 && cards[4][0] == 13
-}
-
-function findFlush(cards) {
-    return cards[0][1] == cards[1][1] &&
-        cards[1][1] == cards[2][1] &&
-        cards[2][1] == cards[3][1] &&
-        cards[3][1] == cards[4][1]
-}
-
-//This function returns a variable containing
-//the number of times the cards are repeated
-function checkEqualCards(cards) {
-
-    var doubleCardsHands = [];
-
+//This function returns an array with the card values
+function getCardsValues(cards) {
+    var valueCard = [];
     for (var i = 0; i < cards.length; i++) {
-        for (var j = i + 1; j < 5; j++) {
-            if (cards[i][0] == cards[j][0]) {
-                doubleCardsHands.push(cards[i]);
-            }
+        if (cards[i].value === "1") {
+            valueCard.push (1)
         }
+        else if (cards[i].value === "2") {
+            valueCard.push(2)
+        }
+        else if (cards[i].value === "3") {
+            valueCard.push(3)
+        }
+        else if (cards[i].value === "4") {
+            valueCard.push(4)
+        }
+        else if (cards[i].value === "5") {
+            valueCard.push(5)
+        }
+        else if (cards[i].value === "6") {
+            valueCard.push(6)
+        } 
+        else if (cards[i].value === "7") {
+            valueCard.push(7)
+        }
+        else if (cards[i].value === "8") {
+            valueCard.push(8)
+        }
+        else if (cards[i].value === "9") {
+            valueCard.push(9)
+        }
+        else if (cards[i].value === "10") {
+            valueCard.push(10)
+        }
+        else if (cards[i].value === "J") {
+            valueCard.push(11)
+        }
+        else if (cards[i].value === "Q") {
+            valueCard.push(12)
+        }
+        else if (cards[i].value === "K") {
+            valueCard.push(13)
+        } else valueCard.push(cards[i].value);
     }
-    return doubleCardsHands;
-}
-
-//This function returns a variable containing 
-//the numbers of the cards without the suits
-function cardsHandWithoutSuit(cards) {
-
-    var numbersOfCards = [];
-
-    for (var i = 0; i < cards.length; i++) {
-        numbersOfCards.push(cards[i][0]);
-    }
-    return numbersOfCards;
-}
-
-function evaluateHighCardScore(cards) {
-    if (Math.min(...cardsHandWithoutSuit(cards)) == 1) {
-        return highCard1;
-    } else if (Math.max(...cardsHandWithoutSuit(cards)) == 13) {
-        return hightCardK;
-    } else if (Math.max(...cardsHandWithoutSuit(cards)) == 12) {
-        return hightCardQ;
-    } else if (Math.max(...cardsHandWithoutSuit(cards)) == 11) {
-        return hightCardJ;
-    } else if (Math.max(...cardsHandWithoutSuit(cards)) == 10) {
-        return hightCard10;
-    } else if (Math.max(...cardsHandWithoutSuit(cards)) == 9) {
-        return hightCard9;
-    } else if (Math.max(...cardsHandWithoutSuit(cards)) == 8) {
-        return hightCard8;
-    } else if (Math.max(...cardsHandWithoutSuit(cards)) == 7) {
-        return hightCard7;
-    }
+    return valueCard;
 }
