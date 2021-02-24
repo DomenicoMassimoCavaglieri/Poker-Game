@@ -1,11 +1,11 @@
 const CHOOSE_FIVE_CARDS = "Choose 5 cards";
 const FIVE_IDENTICAL_CARDS = "5 identical cards...";
+const FLUSH = "Flush";
 // var royalStraigth = "Royal Straigth";
 // var straigthFlush = "Straigth Flush";
 // var straight = "Straight";
 // var fourOfAKind = "Four of a Kind";
 // var fullHouse = "Full House";
-// var Flush = "Flush";
 // var pair = "Pair";
 // var twoPair = "Two Pair";
 // var threeOfAKind = "Three of a Kind";
@@ -18,12 +18,32 @@ const FIVE_IDENTICAL_CARDS = "5 identical cards...";
 // var hightCard8 = "High Card, 8";
 // var hightCard7 = "High Card, 7";
 
-function evaluateCardsHand(cards) {
-    if (findNoSelectedCards(getCardsValues(cards))) {
-        return CHOOSE_FIVE_CARDS;
-    } else if (findFiveIdenticalCards((getCardsValues(cards)))) {
-        return FIVE_IDENTICAL_CARDS;
+//This function sorts all the results of a hand of cards 
+//and returns the one with the highest priority.
+function evaluateScore(text) {
+    for (txt of text) {
+        if (text[i] === CHOOSE_FIVE_CARDS) {
+            return CHOOSE_FIVE_CARDS;
+        } else if (text[i] === FIVE_IDENTICAL_CARDS) {
+            return FIVE_IDENTICAL_CARDS;
+        }
     }
+}
+
+//This function analyzes the hand of cards 
+//and returns an array with all the scores made.
+function evaluateCardsHand(cards) {
+    var score = [];
+    if (findNoSelectedCards(getCardsValues(cards))) {
+        score.push(CHOOSE_FIVE_CARDS);
+    } 
+    if (findFiveIdenticalCards((getCardsValues(cards)))) {
+        score.push(FIVE_IDENTICAL_CARDS);
+    } 
+    if (findFlush(getCardsSuit(cards))) {
+        score.push(FLUSH);
+    }
+    return score; 
 }
 
 
@@ -54,12 +74,19 @@ function findNoSelectedCards(cards) {
     }
 }
 
-
 //This function checks if 5 identical cards have been chosen
 function findFiveIdenticalCards(cards) {
     var cardNumber = cards[0];
     return cards.every(function(card) {
         return card === cardNumber;
+    })
+}
+
+//This function checks for the presence of a Flush
+function findFlush(cards) {
+    var cardSuit = cards[0];
+    return cards.every(function(card) {
+        return card === cardSuit;
     })
 }
 
@@ -108,4 +135,13 @@ function getCardsValues(cards) {
         } else valueCard.push(cards[i].value);
     }
     return valueCard;
+}
+
+//This function returns an array with the card suit
+function getCardsSuit(cards) {
+    var suitCard = [];
+    for (var i = 0; i < cards.length; i++) {
+        suitCard.push(cards[i].suit);
+    }
+    return suitCard;
 }
