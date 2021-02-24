@@ -21,7 +21,7 @@ const FIVE_IDENTICAL_CARDS = "5 identical cards...";
 function evaluateCardsHand(cards) {
     if (findNoSelectedCards(getCardsValues(cards))) {
         return CHOOSE_FIVE_CARDS;
-    } else if (findFiveIdenticalCards(cards)) {
+    } else if (findFiveIdenticalCards((getCardsValues(cards)))) {
         return FIVE_IDENTICAL_CARDS;
     }
 }
@@ -49,7 +49,6 @@ function evaluateCardsHand(cards) {
 
 //This function checks if all cards of the hand cards have been selected 
 function findNoSelectedCards(cards) {
-    console.log(cards);
     for (i = 0; i<cards.length; i++) {
         return cards[i] === "" 
     }
@@ -58,10 +57,10 @@ function findNoSelectedCards(cards) {
 
 //This function checks if 5 identical cards have been chosen
 function findFiveIdenticalCards(cards) {
-    var numberCard = card[0];
-    return cards.every(function (card) {
-        card === numberCard;
-    });
+    var cardNumber = cards[0];
+    return cards.every(function(card) {
+        return card === cardNumber;
+    })
 }
 
 //This function returns an array with the card values
