@@ -112,21 +112,25 @@ select {
     flex-direction: column;
     justify-content: space-between;
     height: 190px;
+    color: #ffffff;
 }
 
-#score-container {
+#counter_text {
+    padding-left: 60px;
+}
+
+#score_container {
     height: 50px;
     margin-top: 30px;
 }
 
-.score-text-container {
+.score_text_container {
     justify-content: center;
     width: 320px;
     text-align: center
 }
 
 #score_text {
-    color: #ffffff;
     font-size: 34px;
     font-weight: 400;
     margin: 10px;
