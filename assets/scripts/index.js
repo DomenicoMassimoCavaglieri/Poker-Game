@@ -1,16 +1,65 @@
-function startRandom() {
-    var cardsDeck = getPokerDeck();
-    cardsDeckPrintingConsole();
+hideButton();
+resetValueInputField()
+
+var cardsDeck;
+var cardsHand;
+
+
+function displayRandomCards() {
+    resetValueInputField();
+    resetPrintingScreen()
+    document.getElementById("btn_user_cards").setAttribute("class", "display_none")
+    document.getElementById("btn_random_cards").setAttribute("class", "display_block red")
+    cardsDeck = getPokerDeck();
+    printingDeckConsole(cardsDeck);
     shuffle(cardsDeck);
-    shuffledCardsDeckPrintingConsole(cardsDeck);
-    var cardsHand = getCardsHand(cardsDeck);
+    printingDeckConsole(cardsDeck);
+    cardsHand = cardsDeck.splice(0, 5);
     randomCardsInInputField(cardsHand);
-    cardsHandPrintingConsole(cardsHand);
-    figuresIntoIntegers(cardsHand);
-    var randomCardsReadyForEvaluation = cardsHand.sort((a, b) => a[0] - b[0]);
-    var textScore = evaluateCardsHand(randomCardsReadyForEvaluation);
-    cardsToEvaluatePrintngConsole(randomCardsReadyForEvaluation, textScore);
-    printingScreen(textScore);
+    printingDeckConsole(cardsHand);
+    printingCounter(cardsDeck);
+    printingDeckConsole(cardsDeck);
+    console.log("-----------------------");
+    //var randomCardsReadyForEvaluation = cardsHand.map(figuresIntoIntegers).sort((a, b) => a - b);
+    //console.log(randomCardsReadyForEvaluation);
+    // var textScore = evaluateCardsHand(randomCardsReadyForEvaluation);
+    // cardsToEvaluatePrintngConsole(randomCardsReadyForEvaluation, textScore);
+    // printingScreen(textScore);
+}
+
+function displayYourCards() {
+    resetValueInputField();
+    resetPrintingScreen();
+    document.getElementById("btn_user_cards").setAttribute("class", "display_block red")
+    document.getElementById("btn_random_cards").setAttribute("class", "display_none")
+}
+
+function startRandom() {
+    // var cardsHand = getCardsHand(cardsDeck);
+    
+    // cardsHandPrintingConsole(cardsHand);
+    // figuresIntoIntegers(cardsHand);
+    // var randomCardsReadyForEvaluation = cardsHand.sort((a, b) => a[0] - b[0]);
+    switch (cardsDeck.length > 5) {
+        case true:
+            cardsHand = cardsDeck.splice(0, 5);
+            randomCardsInInputField(cardsHand);
+            printingCounter(cardsDeck);
+            printingDeckConsole(cardsHand);
+            printingDeckConsole(cardsDeck); 
+            console.log("----------------------")
+            break;
+        case false:
+            displayRandomCards()
+    }
+    
+    
+    
+    
+    // var randomCardsReadyForEvaluation = cardsHand.map(figuresIntoIntegers).sort((a, b) => a - b);
+    // var textScore = evaluateCardsHand(randomCardsReadyForEvaluation);
+    //cardsToEvaluatePrintngConsole(randomCardsReadyForEvaluation, textScore);
+    //printingScreen(textScore);
 }
 
 function startUserInput() {
@@ -23,24 +72,9 @@ function startUserInput() {
     printingScreen(textScore);
 }
 
-hideYourCards();
-resetValueInputField()
-
-function hideYourCards() {
+function hideButton() {
     document.getElementById("btn_user_cards").setAttribute("class", "display_none")
-}
-
-function displayRandomCards() {
-    resetValueInputField();
-    resetPrintingScreen()
-    document.getElementById("btn_user_cards").setAttribute("class", "display_none")
-    document.getElementById("btn_random_cards").setAttribute("class", "display_block red")
-
-}
-
-function displayYourCards() {
-    resetValueInputField();
-    resetPrintingScreen();
-    document.getElementById("btn_user_cards").setAttribute("class", "display_block red")
     document.getElementById("btn_random_cards").setAttribute("class", "display_none")
+
 }
+
