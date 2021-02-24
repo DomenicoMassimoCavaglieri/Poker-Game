@@ -1,4 +1,4 @@
-function printingDeckConsole(cards) {
+function printingCardsConsole(cards) {
     var result = "";
     for (card of cards) {
         result += card.value + card.suit + " ";
