@@ -1,24 +1,3 @@
-// function startRandom() {
-    
-//     console.log("----------------------");
-//     console.log(randomCardsReadyForEvaluation);
-//     console.log("----------------------");
-// }
-
-// function displayRandomCards() {
-//     printDeck(getPokerDeck());
-//     console.log("---------------------")
-//     var cardsDeck = getPokerDeck();
-//     shuffle(cardsDeck);
-//     printDeck(cardsDeck);
-    
-//     console.log("----------------------");
-//     console.log(randomCardsReadyForEvaluation);
-//     console.log("----------------------");
-// }
-
-
-
 // This function creates a Poker deck: an array of 52 cards (value, suit):
 function getPokerDeck() {
     let deck = [];
@@ -26,10 +5,7 @@ function getPokerDeck() {
         let clubs = "♣";
         let diamonds = "♦";
         let hearts = "♥";
-        let spades = "♠";
-        // if (i == 1) {
-        //     deck.push({ value: "A", suit: clubs }, { value: "A", suit: diamonds }, { value: "A", suit: hearts }, { value: "A", suit: spades });
-        // } else 
+        let spades = "♠"; 
         if (i == 11) {
             deck.push({ value: "J", suit: clubs }, { value: "J", suit: diamonds }, { value: "J", suit: hearts }, { value: "J", suit: spades });
         } else if (i == 12) {
@@ -51,29 +27,3 @@ function shuffle(deck) {
         deck[j] = k
     }
 }
-
-// This function returns the hand of cards:
-// function getRemainingDeck(deck) {
-//     var counter = deck.length;
-//     if (counter >= 2) {
-//         deck.splice(0,5);
-//         console.log("OKKIO " + counter);   
-//         return deck;
-//     } 
-//}
-
-
-// function cardsDeckLimit(deck) {
-//     var counter = deck.length;
-//     console.log("Attenzione mancano " + deck.length + " carte");
-//     return counter > 7;
-// }
-
-// function cardsHandFromRemaningDeck(deck) {
-//     if (cardsDeckLimit(deck)) {
-//         console.log(cardsDeckLimit(deck))
-//         return deck.splice(0,5);
-//     } else return deck.splice(0,0);
-// }
-
-
