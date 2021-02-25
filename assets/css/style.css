@@ -113,6 +113,7 @@ select {
     justify-content: space-between;
     height: 190px;
     color: #ffffff;
+    margin-top: 30px;
 }
 
 #counter_text {
@@ -121,7 +122,7 @@ select {
 
 #score_container {
     height: 50px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .score_text_container {
