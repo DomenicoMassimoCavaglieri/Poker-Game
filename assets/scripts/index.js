@@ -48,8 +48,7 @@ function displayRandomCards() {
 //The cards are sold printed on the screen and on the console, 
 //they are analyzed and the result printed on the screen.
 function giveMeCards() {
-    switch (cardsDeck.length > 5) {
-        case true:
+    if (cardsDeck.length > 5) {
             randomCardsHand = cardsDeck.splice(0, 5);
             randomCardsInInputField(randomCardsHand);
             printingCounter(cardsDeck);
@@ -60,9 +59,9 @@ function giveMeCards() {
             console.log(textScore);
             console.log(getCardsValues(randomCardsHand));
             console.log("-----------------------");
-            break;
-        case false:
-            displayRandomCards()
+    } else {
+        randomCards = false;
+        return displayRandomCards();
     }
 }
 
