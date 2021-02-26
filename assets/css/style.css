@@ -1,4 +1,4 @@
-@media (min-width:992px) {
+@media (min-width:768px) {
     body {
         justify-content: center;
     }
@@ -7,7 +7,7 @@
 @media (min-width: 650px) {
     .main_section {
         flex-wrap: wrap;
-        height: 340px;    
+        height: 355px;    
     }
 }
 
@@ -65,7 +65,7 @@ body {
    
 }
 
-.title {
+#title {
     font-size: 22px;
 }
 
@@ -111,7 +111,7 @@ select {
 #section_2 {
     flex-direction: column;
     justify-content: space-between;
-    height: 190px;
+    height: 250px;
     color: #ffffff;
     margin-top: 30px;
 }
@@ -147,15 +147,19 @@ button {
     height: 80px;
     border-radius: 10PX;
     border: solid 1px  #ff0000;
-    cursor: pointer;
     font-size: 20PX;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); 
-    transform: scale(1); 
-    transition: all 0.2s 0s ease-in-out;  
 }
 
+.transform {
+    transform: scale(1); 
+    transition: all 0.2s 0s ease-in-out;  
+    cursor: pointer;
+}
+
+#title:hover,
 button:hover {
-    transform: scale(1.05); 
+    transform: scale(1.03); 
 }
 
 .display_none {

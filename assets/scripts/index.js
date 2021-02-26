@@ -19,8 +19,9 @@ var textScore;
 function displayRandomCards() {
     resetValueInputField();
     resetPrintingScreen()
+    document.getElementById("section_2").setAttribute("class", "flex")
     document.getElementById("btn_user_cards").setAttribute("class", "display_none")
-    document.getElementById("btn_random_cards").setAttribute("class", "display_block red")
+    document.getElementById("btn_random_cards").setAttribute("class", "display_block red transform")
     cardsDeck = getPokerDeck();
     printingCardsConsole(cardsDeck);
     shuffle(cardsDeck);
@@ -67,7 +68,8 @@ function displayYourCards() {
     resetValueInputField();
     resetPrintingScreen();
     resetPrintingCounter()
-    document.getElementById("btn_user_cards").setAttribute("class", "display_block red")
+    document.getElementById("section_2").setAttribute("class", "flex")
+    document.getElementById("btn_user_cards").setAttribute("class", "display_block red transform")
     document.getElementById("btn_random_cards").setAttribute("class", "display_none")
 }
 
@@ -89,4 +91,5 @@ function startUserInput() {
 function hideButton() {
     document.getElementById("btn_user_cards").setAttribute("class", "display_none")
     document.getElementById("btn_random_cards").setAttribute("class", "display_none")
+    document.getElementById("section_2").setAttribute("class", "display_none")
 }
