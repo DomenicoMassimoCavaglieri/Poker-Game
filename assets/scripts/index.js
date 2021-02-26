@@ -9,6 +9,7 @@ var cardsDeck;
 var randomCardsHand;
 var userCardsHand;
 var textScore;
+var randomCards = false;
 
 //This function is invoked by the user pressing the key. 
 //Sets up the screen to display random card combinations.
@@ -17,6 +18,7 @@ var textScore;
 //The hand of cards is printed on the screen, on the console, 
 //is analyzed and the score is printed
 function displayRandomCards() {
+    if (!randomCards) {
     resetValueInputField();
     resetPrintingScreen()
     document.getElementById("section_2").setAttribute("class", "flex")
@@ -36,6 +38,8 @@ function displayRandomCards() {
     console.log(textScore);
     console.log(getCardsValues(randomCardsHand));
     console.log("-----------------------");
+    randomCards = true;
+    }
 }
 
 //This function is invoked by the user pressing the key.
@@ -46,7 +50,6 @@ function displayRandomCards() {
 function startRandom() {
     switch (cardsDeck.length > 5) {
         case true:
-            hideDisplayRandomCards()
             randomCardsHand = cardsDeck.splice(0, 5);
             randomCardsInInputField(randomCardsHand);
             printingCounter(cardsDeck);
@@ -93,8 +96,4 @@ function hideButton() {
     document.getElementById("btn_user_cards").setAttribute("class", "display_none")
     document.getElementById("btn_random_cards").setAttribute("class", "display_none")
     document.getElementById("section_2").setAttribute("class", "display_none")
-}
-
-function hideDisplayRandomCards() {
-    document.getElementById("display_random").setAttribute("class", "display_none")
 }
