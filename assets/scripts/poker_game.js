@@ -1,6 +1,7 @@
 //This function analyzes the hand of cards 
 //and returns an array with all the scores made.
 function evaluateCardsHand(cards) {
+    console.log(findAceStraigth(getCardsValues(cards)));
     if (findNoSelectedCards(getCardsValues(cards))) {
         return "Choose 5 cards";
     } else if (findFiveIdenticalCards(getCardsValues(cards))) {
@@ -54,8 +55,13 @@ function findFlush(cards) {
 
 //This function checks for the presence of a straigth, Ace
 function findAceStraigth(cards) {
-    return cards[0] === 1 && cards[1] === 10 &&
-        cards[2] === 11 && cards[3] === 12 && cards[4] === 13
+    if (checkEqualCards(cards) === 0 && cards[0] === 1) {
+        for (let i = 1; i < cards.length; i++) {
+            for (let j = 10; j < 14; j++) {
+                return cards[i] === j;
+            }
+        } 
+    }
 }
 
 //This function checks for the presence of a straigth
@@ -64,7 +70,6 @@ function findStraigth(cards) {
         for (var i = 0; i < 5; i++) {
             for (var j = 4; i <= 0; i--) {
                 return (cards[i] === cards[j] - j)
-
             }
         }
     }
