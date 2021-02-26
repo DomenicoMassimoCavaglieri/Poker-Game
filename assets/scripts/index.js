@@ -1,6 +1,9 @@
 //These functions when loading the page prepare the initial setup
 hideButton();
 resetValueInputField()
+window.onload = function(){
+    game_mode.reset();
+}
 
 var cardsDeck;
 var randomCardsHand;
