@@ -1,5 +1,6 @@
-//This function analyzes the hand of cards 
-//and returns an array with all the scores made.
+//This function accepts as input a hand of cards from the game of Poker 
+//(an array of {value, suit} objects), 
+//analyzes it and returns a string with the name of the result.
 function evaluateCardsHand(cards) {
     console.log(findAceStraigth(getCardsValues(cards)));
     if (findNoSelectedCards(getCardsValues(cards))) {
