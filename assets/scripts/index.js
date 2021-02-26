@@ -69,6 +69,7 @@ function giveMeCards() {
 //This function is invoked by the user pressing the key. 
 //Sets up the screen to display user card combinations.
 function displayYourCards() {
+    randomCards = false;
     resetValueInputField();
     resetPrintingScreen();
     resetPrintingCounter()
