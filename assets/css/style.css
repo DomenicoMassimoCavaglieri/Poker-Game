@@ -69,16 +69,26 @@ body {
     font-size: 22px;
 }
 
+.radio_container {
+    justify-content: center;
+    width: 270px;
+}
+
+.radio {
+    justify-content: space-between;
+    width: 100px;
+}
+
 input[type="radio"] {
     margin-right: -60px;
     width: 25px;
     height: 25px;
-
 }
 
-.radio_container {
-    justify-content: space-between;
-    width: 270px;
+#display_user {
+    align-self: flex-end;
+    padding-left: 20px;
+    margin-left: 30px;
 }
 
 select {

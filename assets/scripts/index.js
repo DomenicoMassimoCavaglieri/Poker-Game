@@ -46,6 +46,7 @@ function displayRandomCards() {
 function startRandom() {
     switch (cardsDeck.length > 5) {
         case true:
+            hideDisplayRandomCards()
             randomCardsHand = cardsDeck.splice(0, 5);
             randomCardsInInputField(randomCardsHand);
             printingCounter(cardsDeck);
@@ -92,4 +93,8 @@ function hideButton() {
     document.getElementById("btn_user_cards").setAttribute("class", "display_none")
     document.getElementById("btn_random_cards").setAttribute("class", "display_none")
     document.getElementById("section_2").setAttribute("class", "display_none")
+}
+
+function hideDisplayRandomCards() {
+    document.getElementById("display_random").setAttribute("class", "display_none")
 }
