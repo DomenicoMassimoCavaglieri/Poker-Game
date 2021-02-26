@@ -31,11 +31,14 @@
         <div id="section_1">
             <div class="title_box label flex">
                 <span class="title red">POKER GAME SCORE</span>
-                <div class="radio_container flex">
-                    <input type="radio" name="option" class="red"
-                        onclick="displayRandomCards()">Random<br>Cards</button>
+                <div >
+                    <form class="radio_container flex" id="game_mode">
+                        <input type="radio" name="option" class="red"
+                        onclick="displayRandomCards()">Random<br>Cards
                     <input type="radio" name="option" class="red" onclick="displayYourCards()">Your<br>
-                    Cards</button>
+                    Cards
+                    </form>
+                    
                 </div>
             </div>
             <div class="cards flex">
