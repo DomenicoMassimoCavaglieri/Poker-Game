@@ -47,7 +47,7 @@ function displayRandomCards() {
 //When the deck is finished, on a further press, the deck is reset.
 //The cards are sold printed on the screen and on the console, 
 //they are analyzed and the result printed on the screen.
-function startRandom() {
+function giveMeCards() {
     switch (cardsDeck.length > 5) {
         case true:
             randomCardsHand = cardsDeck.splice(0, 5);
@@ -80,7 +80,7 @@ function displayYourCards() {
 //This function is invoked by the user pressing the key.
 //This function analyzes the hand of cards chosen by the user, 
 //analyzes it and returns the score
-function startUserInput() {
+function yourCards() {
     userCardsHand = getUserCardsHand()
     printingCardsConsole(userCardsHand);
     console.log(userCardsHand);
