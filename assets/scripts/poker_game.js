@@ -22,7 +22,7 @@ function evaluateCardsHand(cards) {
         return "Flush";
     } else switch (checkEqualCards(getCardsValues(cards))) {
         case 0:
-            return evaluateHighCardScore(getCardsValues(cards));
+            return highCardScore(getCardsValues(cards));
         case 1:
             return "Pair";
         case 2:
@@ -76,23 +76,30 @@ function findStraigth(cards) {
 }
 
 //This function checks the presence and value of the high card
+function highCardScore(cards) {
+    let highCard = "High Card";
+    return highCard + ", " + evaluateHighCardScore(cards)
+}
+
 function evaluateHighCardScore(cards) {
+    let maxValue = (Math.max(...cards));
     if (Math.min(...cards) == 1) {
-        return "High Card, Ace";
-    } else if (Math.max(...cards) == 13) {
-        return "High Card, K";
-    } else if (Math.max(...cards) == 12) {
-        return "High Card, Q";
-    } else if (Math.max(...cards) == 11) {
-        return "High Card, J";
-    } else if (Math.max(...cards) == 10) {
-        return "High Card, 10";
-    } else if (Math.max(...cards) == 9) {
-        return "High Card, 9";
-    } else if (Math.max(...cards) == 8) {
-        return "High Card, 8";
-    } else if (Math.max(...cards) == 7) {
-        return "High Card, 7";
+        return "Ace";
+    } else switch (maxValue) {
+        case 13:
+            return "K";
+        case 12:
+            return "Q";
+        case 11:
+            return "J";
+        case 10:
+            return "10";
+        case 9:
+            return "9";
+        case 8:
+            return "8";
+        case 7:
+            return "7";
     }
 }
 
