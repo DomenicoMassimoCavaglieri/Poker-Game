@@ -1,4 +1,4 @@
-@media (min-width:992px) {
+@media (min-width:768px) {
     body {
         justify-content: center;
     }
@@ -7,7 +7,7 @@
 @media (min-width: 650px) {
     .main_section {
         flex-wrap: wrap;
-        height: 340px;    
+        height: 355px;    
     }
 }
 
@@ -65,20 +65,30 @@ body {
    
 }
 
-.title {
+#title {
     font-size: 22px;
+}
+
+.radio_container {
+    justify-content: center;
+    width: 270px;
+}
+
+.radio {
+    justify-content: space-between;
+    width: 100px;
 }
 
 input[type="radio"] {
     margin-right: -60px;
     width: 25px;
     height: 25px;
-
 }
 
-.radio_container {
-    justify-content: space-between;
-    width: 270px;
+#display_user {
+    align-self: flex-end;
+    padding-left: 20px;
+    margin-left: 30px;
 }
 
 select {
@@ -111,22 +121,27 @@ select {
 #section_2 {
     flex-direction: column;
     justify-content: space-between;
-    height: 190px;
-}
-
-#score-container {
-    height: 50px;
+    height: 250px;
+    color: #ffffff;
     margin-top: 30px;
 }
 
-.score-text-container {
+#counter_text {
+    padding-left: 60px;
+}
+
+#score_container {
+    height: 50px;
+    margin-top: 10px;
+}
+
+.score_text_container {
     justify-content: center;
     width: 320px;
     text-align: center
 }
 
 #score_text {
-    color: #ffffff;
     font-size: 34px;
     font-weight: 400;
     margin: 10px;
@@ -142,15 +157,19 @@ button {
     height: 80px;
     border-radius: 10PX;
     border: solid 1px  #ff0000;
-    cursor: pointer;
     font-size: 20PX;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); 
-    transform: scale(1); 
-    transition: all 0.2s 0s ease-in-out;  
 }
 
+.transform {
+    transform: scale(1); 
+    transition: all 0.2s 0s ease-in-out;  
+    cursor: pointer;
+}
+
+#title:hover,
 button:hover {
-    transform: scale(1.05); 
+    transform: scale(1.03); 
 }
 
 .display_none {

@@ -1,17 +1,8 @@
-function cardsDeckPrintingConsole() {
-    console.log("Deck of poker cards:" + "(" + getPokerDeck().length + ")" + " " + getPokerDeck());
-}
-
-function shuffledCardsDeckPrintingConsole(cards) {
-    console.log("Shuffled Poker Cards Deck:"+ "(" + cards.length + ")" + " " + cards);
-}
-
-function cardsHandPrintingConsole(hand) {
-    console.log("Your cards:" + " " + hand);
-}
-
-function cardsToEvaluatePrintngConsole(deckReadyForEvaluation, textScore) {
-    console.log("Cards ready for eveluation:" + " " + deckReadyForEvaluation);
-    console.log(textScore);
-    console.log("-------------------------------------")
+//This function prints the cards on the console (decks or hands of cards)
+function printingCardsConsole(cards) {
+    var result = "";
+    for (card of cards) {
+        result += card.value + card.suit + " ";
+    }
+    console.log(cards.length + " Cards: " + result);
 }
