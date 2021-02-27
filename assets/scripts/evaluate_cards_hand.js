@@ -2,7 +2,7 @@
 //(an array of {value, suit} objects), 
 //analyzes it and returns a string with the name of the result.
 function evaluateCardsHand(cards) {
-    console.log(findAceStraigth(getCardsValues(cards)));
+    console.log(getCardsSuit(cards));
     if (findNoSelectedCards(getCardsValues(cards))) {
         return "Choose 5 cards";
     } else if (findFiveIdenticalCards(getCardsValues(cards))) {
@@ -166,9 +166,7 @@ function getCardsValues(cards) {
 
 //This function returns an array with the card suit
 function getCardsSuit(cards) {
-    var suitCard = [];
-    for (var i = 0; i < cards.length; i++) {
-        suitCard.push(cards[i].suit);
-    }
-    return suitCard;
+    var suits = [];
+    cards.map(card => suits.push(card.suit))
+    return suits;
 }
