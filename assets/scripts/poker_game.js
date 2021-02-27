@@ -40,18 +40,15 @@ function findNoSelectedCards(cards) {
 
 //This function checks if 5 identical cards have been chosen
 function findFiveIdenticalCards(cards) {
-    var cardNumber = cards[0];
-    return cards.every(function (card) {
-        return card === cardNumber;
-    })
+    var number = cards[0];
+    return cards.every(card => card === number)
 }
 
 //This function checks for the presence of a Flush
 function findFlush(cards) {
-    var cardSuit = cards[0];
-    return cards.every(function (card) {
-        return card === cardSuit;
-    })
+    var suit = cards[0];
+    return cards.every(card => card === suit);
+
 }
 
 //This function checks for the presence of a straigth, Ace
