@@ -2,7 +2,6 @@
 //(an array of {value, suit} objects), 
 //analyzes it and returns a string with the name of the result.
 function evaluateCardsHand(cards) {
-    console.log(getCardsSuit(cards));
     if (findNoSelectedCards(getCardsValues(cards))) {
         return "Choose 5 cards";
     } else if (findFiveIdenticalCards(getCardsValues(cards))) {
@@ -53,7 +52,7 @@ function findFlush(cards) {
 
 //This function checks for the presence of a straigth, Ace
 function findAceStraigth(cards) {
-    if (checkEqualCards(cards) === 0 && cards[0] === 1) {
+    if (cards[0] === 1) {
         for (let i = 1; i < cards.length; i++) {
             for (let j = 10; j < 14; j++) {
                 return cards[i] === j;
@@ -64,13 +63,12 @@ function findAceStraigth(cards) {
 
 //This function checks for the presence of a straigth
 function findStraigth(cards) {
-    if (checkEqualCards(cards) === 0) {
-        for (var i = 0; i < 5; i++) {
-            for (var j = 4; i <= 0; i--) {
-                return (cards[i] === cards[j] - j)
-            }
-        }
-    }
+    var counter_1 = cards[0];
+    var counter_2 = cards[0];
+    for (let i = 1; i < cards.length; i++) {
+        counter_1 += cards[i];
+        counter_2 += cards[0] + i;
+    } return counter_1 == counter_2;
 }
 
 //This function checks the presence and value of the high card
