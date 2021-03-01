@@ -1,7 +1,7 @@
 //These functions when loading the page prepare the initial setup
 hideButton();
 resetValueInputField()
-window.onload = function(){
+window.onload = function () {
     game_mode.reset();
 }
 
@@ -19,26 +19,26 @@ var randomCards = false;
 //is analyzed and the score is printed
 function displayRandomCards() {
     if (!randomCards) {
-    resetValueInputField();
-    resetPrintingScreen()
-    document.getElementById("section_2").setAttribute("class", "flex")
-    document.getElementById("btn_user_cards").setAttribute("class", "display_none")
-    document.getElementById("btn_random_cards").setAttribute("class", "display_block red transform")
-    cardsDeck = getPokerDeck();
-    printingCardsConsole(cardsDeck);
-    shuffle(cardsDeck);
-    printingCardsConsole(cardsDeck);
-    randomCardsHand = cardsDeck.splice(0, 5);
-    randomCardsInInputField(randomCardsHand);
-    printingCardsConsole(randomCardsHand);
-    printingCounter(cardsDeck);
-    printingCardsConsole(cardsDeck);
-    textScore = evaluateCardsHand(randomCardsHand);
-    printingScreen(textScore);
-    console.log(textScore);
-    console.log(getCardsValues(randomCardsHand));
-    console.log("-----------------------");
-    randomCards = true;
+        resetValueInputField();
+        resetPrintingScreen()
+        document.getElementById("section_2").setAttribute("class", "flex")
+        document.getElementById("btn_user_cards").setAttribute("class", "display_none")
+        document.getElementById("btn_random_cards").setAttribute("class", "display_block red transform")
+        cardsDeck = getPokerDeck();
+        printingCardsConsole(cardsDeck);
+        shuffle(cardsDeck);
+        printingCardsConsole(cardsDeck);
+        randomCardsHand = cardsDeck.splice(0, 5);
+        randomCardsInInputField(randomCardsHand);
+        printingCardsConsole(randomCardsHand);
+        printingCounter(cardsDeck);
+        printingCardsConsole(cardsDeck);
+        textScore = evaluateCardsHand(randomCardsHand);
+        printingScreen(textScore);
+        console.log(textScore);
+        console.log(getCardsValues(randomCardsHand));
+        console.log("-----------------------");
+        randomCards = true;
     }
 }
 
@@ -49,16 +49,16 @@ function displayRandomCards() {
 //they are analyzed and the result printed on the screen.
 function giveMeCards() {
     if (cardsDeck.length > 5) {
-            randomCardsHand = cardsDeck.splice(0, 5);
-            randomCardsInInputField(randomCardsHand);
-            printingCounter(cardsDeck);
-            printingCardsConsole(randomCardsHand);
-            printingCardsConsole(cardsDeck);
-            textScore = evaluateCardsHand(randomCardsHand);
-            printingScreen(textScore);
-            console.log(textScore);
-            console.log(getCardsValues(randomCardsHand));
-            console.log("-----------------------");
+        randomCardsHand = cardsDeck.splice(0, 5);
+        randomCardsInInputField(randomCardsHand);
+        printingCounter(cardsDeck);
+        printingCardsConsole(randomCardsHand);
+        printingCardsConsole(cardsDeck);
+        textScore = evaluateCardsHand(randomCardsHand);
+        printingScreen(textScore);
+        console.log(textScore);
+        console.log(getCardsValues(randomCardsHand));
+        console.log("-----------------------");
     } else {
         randomCards = false;
         return displayRandomCards();
