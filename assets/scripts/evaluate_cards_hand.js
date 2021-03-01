@@ -2,26 +2,27 @@
 //(an array of {value, suit} objects), 
 //analyzes it and returns a string with the name of the result.
 function evaluateCardsHand(cards) {
-    console.log("Numero ripetizioni " + checkEqualCards(getCardsValues(cards)));
+    let cardValue = getCardsValues(cards);
+    console.log("Numero ripetizioni " + checkEqualCards(cardValue));
     console.log("Colore? " + findFlush(getCardsSuit(cards)));
-    console.log("Scala? " + findStraigth(getCardsValues(cards)));
-    console.log("Scala A? " + findAceStraigth(getCardsValues(cards)));
-    if (findNoSelectedCards(getCardsValues(cards))) {
+    console.log("Scala? " + findStraigth(cardValue));
+    console.log("Scala A? " + findAceStraigth(cardValue));
+    if (findNoSelectedCards(cardValue)) {
         return "Choose 5 cards";
-    } else if (findFiveIdenticalCards(getCardsValues(cards))) {
+    } else if (findFiveIdenticalCards(cardValue)) {
         return "5 identical cards...";
     } else if (findFlush(getCardsSuit(cards))) {
-        if (findAceStraigth(getCardsValues(cards))) {
+        if (findAceStraigth(cardValue)) {
             return "Royal Straigth";
-        } else if (findStraigth(getCardsValues(cards))) {
+        } else if (findStraigth(cardValue)) {
             return "Straigth Flush";
         } else return "Flush";
-    } else if (findAceStraigth(getCardsValues(cards))) {
+    } else if (findAceStraigth(cardValue)) {
         return "Straight";
-    } else if (findStraigth(getCardsValues(cards))) {
+    } else if (findStraigth(cardValue)) {
         return "Straight";
     }
-    switch (checkEqualCards(getCardsValues(cards))) {
+    switch (checkEqualCards(cardValue)) {
         case 6:
             return "Four of a Kind";
         case 4:
@@ -33,7 +34,7 @@ function evaluateCardsHand(cards) {
         case 1:
             return "Pair";
         case 0:
-            return highCardScore(getCardsValues(cards));
+            return highCardScore(cardValue);
     }
 }
 
@@ -70,7 +71,8 @@ function findStraigth(cards) {
         if (cards[i + 1] - cards[i] != 1) {
             return false
         }
-    } return true;
+    } 
+    return true;
 }
 
 //This function checks the presence and value of the high card
