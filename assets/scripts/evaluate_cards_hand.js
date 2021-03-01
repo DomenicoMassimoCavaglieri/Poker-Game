@@ -4,22 +4,22 @@
 function evaluateCardsHand(cards) {
     let cardValue = getCardsValues(cards);
     console.log("Numero ripetizioni " + checkEqualCards(cardValue));
-    console.log("Colore? " + findFlush(getCardsSuit(cards)));
-    console.log("Scala? " + findStraigth(cardValue));
-    console.log("Scala A? " + findAceStraigth(cardValue));
-    if (findNoSelectedCards(cardValue)) {
+    console.log("Colore? " + areFlush(getCardsSuit(cards)));
+    console.log("Scala? " + areStraigth(cardValue));
+    console.log("Scala A? " + areAceStraigth(cardValue));
+    if (areNoSelectedCards(cardValue)) {
         return "Choose 5 cards";
-    } else if (findFiveIdenticalCards(cardValue)) {
+    } else if (areFiveIdenticalCards(cardValue)) {
         return "5 identical cards...";
-    } else if (findFlush(getCardsSuit(cards))) {
-        if (findAceStraigth(cardValue)) {
+    } else if (areFlush(getCardsSuit(cards))) {
+        if (areAceStraigth(cardValue)) {
             return "Royal Straigth";
-        } else if (findStraigth(cardValue)) {
+        } else if (areStraigth(cardValue)) {
             return "Straigth Flush";
         } else return "Flush";
-    } else if (findAceStraigth(cardValue)) {
+    } else if (areAceStraigth(cardValue)) {
         return "Straight, Ace High";
-    } else if (findStraigth(cardValue)) {
+    } else if (areStraigth(cardValue)) {
         return "Straight";
     }
     switch (checkEqualCards(cardValue)) {
@@ -39,24 +39,24 @@ function evaluateCardsHand(cards) {
 }
 
 //This function checks if all cards of the hand cards have been selected 
-function findNoSelectedCards(cards) {
+function areNoSelectedCards(cards) {
     return cards.some(card => card === "");
 }
 
 //This function checks if 5 identical cards have been chosen
-function findFiveIdenticalCards(cards) {
+function areFiveIdenticalCards(cards) {
     var number = cards[0];
     return cards.every(card => card === number)
 }
 
 //This function checks for the presence of a Flush
-function findFlush(cards) {
+function areFlush(cards) {
     var suit = cards[0];
     return cards.every(card => card === suit);
 }
 
 //This function checks for the presence of a straigth, Ace
-function findAceStraigth(cards) {
+function areAceStraigth(cards) {
     var aceStraigth = [1, 10, 11, 12, 13]
     for (let i = 0; i < cards.length; i++) {
         if (cards[i] != aceStraigth[i]) {
@@ -66,7 +66,7 @@ function findAceStraigth(cards) {
 }
 
 //This function checks for the presence of a straigth
-function findStraigth(cards) {
+function areStraigth(cards) {
     for (let i = 0; i < cards.length - 1; i++) {
         if (cards[i + 1] - cards[i] != 1) {
             return false
