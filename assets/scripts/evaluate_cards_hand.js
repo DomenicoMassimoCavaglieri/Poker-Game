@@ -79,7 +79,7 @@ function areStraigth(cards) {
 
 //This function checks the presence and value of the high card
 function highCardScore(cards) {
-    return "highCard, " + evaluateHighCardScore(cards);
+    return "High Card, " + evaluateHighCardScore(cards);
 }
 
 function evaluateHighCardScore(cards) {
