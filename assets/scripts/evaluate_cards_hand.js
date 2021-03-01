@@ -57,12 +57,8 @@ function areFlush(cards) {
 
 //This function checks for the presence of a straigth, Ace
 function areAceStraigth(cards) {
-    var aceStraigth = [1, 10, 11, 12, 13]
-    for (let i = 0; i < cards.length; i++) {
-        if (cards[i] != aceStraigth[i]) {
-            return false;
-        }
-    } return true;
+    fourCards = cards.slice(1);
+    return cards[0] == 1 && cards[1] == 10 && areStraigth(fourCards);
 }
 
 //This function checks for the presence of a straigth
@@ -71,7 +67,7 @@ function areStraigth(cards) {
         if (cards[i + 1] - cards[i] != 1) {
             return false
         }
-    } 
+    }
     return true;
 }
 
