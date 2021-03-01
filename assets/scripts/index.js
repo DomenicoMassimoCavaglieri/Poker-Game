@@ -81,14 +81,23 @@ function displayYourCards() {
 //This function analyzes the hand of cards chosen by the user, 
 //analyzes it and returns the score
 function yourCards() {
-    userCardsHand = getUserCardsHand()
-    printingCardsConsole(userCardsHand);
-    console.log(userCardsHand);
-    textScore = evaluateCardsHand(userCardsHand);
-    printingScreen(textScore);
-    console.log(textScore);
-    console.log(getCardsValues(userCardsHand));
-    console.log("----------------------");
+    userCardsHand = getUserCardsHand();
+
+    if (areNoSelectedCards(getCardsValues(userCardsHand))) {
+        textScore = "Choose 5 cards, please.";
+        printingScreen(textScore);
+    } else if (checkEqualCards(cardsHandValueAndSuit(userCardsHand)) != 0) {
+        textScore = "No identical cards, please.";
+        printingScreen(textScore);
+    }
+    else {
+        textScore = evaluateCardsHand(userCardsHand);
+        printingScreen(textScore);
+        printingCardsConsole(userCardsHand);
+        console.log(textScore);
+        console.log(getCardsValues(userCardsHand));
+        console.log("----------------------");
+    }
 }
 
 //This function hides the buttons that are not needed in the initial setup
@@ -97,3 +106,5 @@ function hideButton() {
     document.getElementById("btn_random_cards").setAttribute("class", "display_none")
     document.getElementById("section_2").setAttribute("class", "display_none")
 }
+
+//This function checks if all cards of the hand cards have been selected 
