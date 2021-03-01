@@ -18,7 +18,7 @@ function evaluateCardsHand(cards) {
             return "Straigth Flush";
         } else return "Flush";
     } else if (findAceStraigth(cardValue)) {
-        return "Straight";
+        return "Straight, Ace High";
     } else if (findStraigth(cardValue)) {
         return "Straight";
     }
