@@ -25,7 +25,6 @@ function evaluateCardsHand(cards) {
 
 function scoreEqualCards(cards) {
     let cardsValues = getCardsValues(cards);
-    console.log("Numero ripetizioni " + checkEqualCards(cardsValues));
     switch (checkEqualCards(cardsValues)) {
         case 6:
             return "Four of a Kind";
