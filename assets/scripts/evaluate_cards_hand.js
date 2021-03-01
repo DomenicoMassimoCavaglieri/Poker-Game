@@ -168,7 +168,5 @@ function getCardsValues(cards) {
 
 //This function returns an array with the card suit
 function getCardsSuit(cards) {
-    var suits = [];
-    cards.map(card => suits.push(card.suit))
-    return suits;
+    return cards.map(card => card = card.suit)
 }
