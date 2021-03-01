@@ -1,28 +1,32 @@
+var flush = false;
+
 //This function accepts as input a hand of cards from the game of Poker 
 //(an array of {value, suit} objects), 
 //analyzes it and returns a string with the name of the result.
 function evaluateCardsHand(cards) {
-    let cardValue = getCardsValues(cards);
-    console.log("Numero ripetizioni " + checkEqualCards(cardValue));
-    console.log("Colore? " + areFlush(getCardsSuit(cards)));
-    console.log("Scala? " + areStraigth(cardValue));
-    console.log("Scala A? " + areAceStraigth(cardValue));
-    if (areNoSelectedCards(cardValue)) {
+    let cardsValues = getCardsValues(cards);
+    areFlush(getCardsSuit(cards));
+    if (areNoSelectedCards(cardsValues)) {
         return "Choose 5 cards";
-    } else if (areFiveIdenticalCards(cardValue)) {
+    } else if (areFiveIdenticalCards(cardsValues)) {
         return "5 identical cards...";
-    } else if (areFlush(getCardsSuit(cards))) {
-        if (areAceStraigth(cardValue)) {
+    } else if (areAceStraigth(cardsValues)) {
+        if (flush) {
             return "Royal Straigth";
-        } else if (areStraigth(cardValue)) {
+        } else return "Straight, Ace High";
+    } else if (areStraigth(cardsValues)) {
+        if (flush) {
             return "Straigth Flush";
-        } else return "Flush";
-    } else if (areAceStraigth(cardValue)) {
-        return "Straight, Ace High";
-    } else if (areStraigth(cardValue)) {
-        return "Straight";
-    }
-    switch (checkEqualCards(cardValue)) {
+        } else return "Straight";
+    } else if (flush) { 
+        return "Flush";
+    } else return scoreEqualCards(cards);
+}
+
+function scoreEqualCards(cards) {
+    let cardsValues = getCardsValues(cards);
+    console.log("Numero ripetizioni " + checkEqualCards(cardsValues));
+    switch (checkEqualCards(cardsValues)) {
         case 6:
             return "Four of a Kind";
         case 4:
@@ -34,7 +38,7 @@ function evaluateCardsHand(cards) {
         case 1:
             return "Pair";
         case 0:
-            return highCardScore(cardValue);
+            return highCardScore(cardsValues);
     }
 }
 
@@ -52,7 +56,9 @@ function areFiveIdenticalCards(cards) {
 //This function checks for the presence of a Flush
 function areFlush(cards) {
     var suit = cards[0];
-    return cards.every(card => card === suit);
+    if (cards.every(card => card === suit)) {
+        flush = true;
+    } else flush = false;
 }
 
 //This function checks for the presence of a straigth, Ace
