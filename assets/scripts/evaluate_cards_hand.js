@@ -119,27 +119,7 @@ function checkEqualCards(cards) {
 function getCardsValues(cards) {
     var valueCard = [];
     for (var i = 0; i < cards.length; i++) {
-        if (cards[i].value === "1") {
-            valueCard.push(1)
-        } else if (cards[i].value === "2") {
-            valueCard.push(2)
-        } else if (cards[i].value === "3") {
-            valueCard.push(3)
-        } else if (cards[i].value === "4") {
-            valueCard.push(4)
-        } else if (cards[i].value === "5") {
-            valueCard.push(5)
-        } else if (cards[i].value === "6") {
-            valueCard.push(6)
-        } else if (cards[i].value === "7") {
-            valueCard.push(7)
-        } else if (cards[i].value === "8") {
-            valueCard.push(8)
-        } else if (cards[i].value === "9") {
-            valueCard.push(9)
-        } else if (cards[i].value === "10") {
-            valueCard.push(10)
-        } else if (cards[i].value === "J") {
+        if (cards[i].value === "J") {
             valueCard.push(11)
         } else if (cards[i].value === "Q") {
             valueCard.push(12)
