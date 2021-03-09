@@ -16,10 +16,11 @@ function evaluateCardsHand(cards) {
         } else return "Straight";
     } else if (flush) { 
         return "Flush";
-    } else return scoreEqualCards(cards);
+    } else return eveluateScoreEqualCards(cards);
 }
 
-function scoreEqualCards(cards) {
+//Function that checks the score for identical cards
+function eveluateScoreEqualCards(cards) {
     let cardsValues = getCardsValues(cards);
     switch (checkEqualCards(cardsValues)) {
         case 6:
