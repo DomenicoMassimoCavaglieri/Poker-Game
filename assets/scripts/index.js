@@ -1,5 +1,4 @@
 //These functions when loading the page prepare the initial setup
-hideButton();
 resetValueInputField()
 window.onload = function () {
     game_mode.reset();
@@ -99,12 +98,3 @@ function yourCards() {
         console.log("----------------------");
     }
 }
-
-//This function hides the buttons that are not needed in the initial setup
-function hideButton() {
-    document.getElementById("btn_user_cards").setAttribute("class", "display_none")
-    document.getElementById("btn_random_cards").setAttribute("class", "display_none")
-    document.getElementById("section_2").setAttribute("class", "display_none")
-}
-
-//This function checks if all cards of the hand cards have been selected 
