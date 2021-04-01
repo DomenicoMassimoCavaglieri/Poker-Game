@@ -5,7 +5,7 @@
 <h4>or try RANDOM CARDS</h4>
 <P>POKER GAME SCORE is a simple webapp, mobile version, which allows you to learn the scores of the game of poker.
 The user can enter their own combination of cards and press PLAY, or can view a random combination of cards according to the Fiscer-Yates algorithm, by pressing RANDOM.</p>
-<h3>Languages<h3>
-<p>Javascript, Html5, CSS3 
+<h3>Languages</h3>
+  <p>Javascript, Html5, CSS3</p>
   <h4>Deploy:</h4>
   https://pokergamescore.netlify.app/
